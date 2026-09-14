@@ -4,18 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bloom & Co. | Fresh Flowers Delivered</title>
+<title>Virasat | Indian Idols & Antiques</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* =========================
-   RESET
-========================= */
+/* =====================================================
+   GLOBAL
+===================================================== */
 
 *{
     margin:0;
@@ -23,15 +23,19 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    background:#fffdf9;
-    color:#292621;
-    font-family:"DM Sans", sans-serif;
+    background:#f7f3ed;
+    color:#29251f;
+    font-family:"Inter",sans-serif;
 }
 
 img{
-    display:block;
     width:100%;
+    display:block;
 }
 
 button{
@@ -44,106 +48,115 @@ a{
     color:inherit;
 }
 
-/* =========================
-   TOP BAR
-========================= */
+/* =====================================================
+   TOP ANNOUNCEMENT
+===================================================== */
 
 .topbar{
-    background:#304b36;
-    color:#fff;
+    background:#211c17;
+    color:#e8d8bd;
     text-align:center;
-    padding:9px;
-    font-size:13px;
-    letter-spacing:.2px;
+    padding:9px 15px;
+    font-size:11px;
+    letter-spacing:1.4px;
+    text-transform:uppercase;
 }
 
-/* =========================
+/* =====================================================
    HEADER
-========================= */
+===================================================== */
 
 .header{
-    height:76px;
-    background:#fff;
+    height:82px;
+    background:#fbf9f5;
+    border-bottom:1px solid #ded7cb;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
+
     padding:0 6%;
-    border-bottom:1px solid #eee9e1;
+
     position:sticky;
     top:0;
     z-index:1000;
 }
 
 .logo{
-    font-family:"Playfair Display",serif;
-    font-size:29px;
+    font-family:"Cormorant Garamond",serif;
+    font-size:34px;
     font-weight:700;
-    color:#304b36;
+    color:#8a5a25;
 }
 
-.logo span{
-    color:#c56b62;
+.logo small{
+    display:block;
+    font-family:"Inter",sans-serif;
+    font-size:7px;
+    letter-spacing:3px;
+    color:#777;
+    text-align:center;
+    margin-top:-7px;
 }
 
-.nav{
+.navigation{
     display:flex;
-    gap:32px;
-    font-size:14px;
+    gap:30px;
+    font-size:13px;
     font-weight:500;
 }
 
-.nav a{
+.navigation a{
     transition:.2s;
 }
 
-.nav a:hover{
-    color:#c56b62;
+.navigation a:hover{
+    color:#a26b2b;
 }
 
 .header-actions{
     display:flex;
     align-items:center;
-    gap:20px;
+    gap:19px;
 }
 
-.search-icon,
-.user-icon,
-.cart-icon{
-    font-size:20px;
+.header-action{
+    font-size:19px;
     cursor:pointer;
-}
-
-.cart{
     position:relative;
 }
 
 .cart-count{
     position:absolute;
+    right:-8px;
     top:-8px;
-    right:-9px;
-    background:#c56b62;
-    color:white;
-    width:18px;
-    height:18px;
+
+    width:17px;
+    height:17px;
+
+    background:#9b6328;
+    color:#fff;
+
+    font-size:9px;
+
     border-radius:50%;
-    font-size:10px;
+
     display:flex;
     align-items:center;
     justify-content:center;
 }
 
-/* =========================
+/* =====================================================
    HERO
-========================= */
+===================================================== */
 
 .hero{
-    width:100%;
-    min-height:620px;
+    min-height:650px;
     position:relative;
     overflow:hidden;
 }
 
-.hero img{
+.hero-image{
     position:absolute;
     inset:0;
     width:100%;
@@ -154,47 +167,69 @@ a{
 .hero-overlay{
     position:absolute;
     inset:0;
+
     background:
         linear-gradient(
             90deg,
-            rgba(31,42,31,.72) 0%,
-            rgba(31,42,31,.45) 40%,
-            rgba(31,42,31,.05) 75%
+            rgba(27,22,17,.92) 0%,
+            rgba(27,22,17,.72) 36%,
+            rgba(27,22,17,.25) 70%,
+            rgba(27,22,17,.08) 100%
         );
 }
 
 .hero-content{
     position:relative;
     z-index:2;
+
     width:88%;
-    max-width:1300px;
+    max-width:1250px;
+
     margin:auto;
-    padding-top:150px;
+
+    padding-top:155px;
+
     color:#fff;
 }
 
-.hero-small{
+.hero-kicker{
+    color:#dcb77e;
+
     text-transform:uppercase;
+
     letter-spacing:3px;
-    font-size:13px;
+
+    font-size:12px;
+
     margin-bottom:18px;
-    color:#f4d4c9;
 }
 
 .hero h1{
-    font-family:"Playfair Display",serif;
-    font-size:70px;
-    line-height:1.05;
-    max-width:650px;
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:76px;
+
+    line-height:.95;
+
     font-weight:600;
+
+    max-width:650px;
 }
 
-.hero p{
+.hero h1 span{
+    color:#d5a660;
+}
+
+.hero-description{
     max-width:520px;
-    font-size:17px;
-    line-height:1.7;
-    margin:24px 0 32px;
-    color:#f6f2ed;
+
+    color:#dedbd6;
+
+    line-height:1.8;
+
+    font-size:15px;
+
+    margin:28px 0 34px;
 }
 
 .hero-buttons{
@@ -202,572 +237,917 @@ a{
     gap:12px;
 }
 
-.primary-btn{
-    background:#c56b62;
-    border:none;
+.gold-button{
+    background:#b77b35;
     color:white;
-    padding:14px 27px;
-    border-radius:4px;
-    font-weight:600;
-    transition:.2s;
-}
 
-.primary-btn:hover{
-    background:#ad574f;
-}
-
-.secondary-btn{
-    background:white;
     border:none;
-    color:#304b36;
-    padding:14px 27px;
-    border-radius:4px;
+
+    padding:14px 28px;
+
+    font-size:13px;
     font-weight:600;
+
+    transition:.25s;
 }
 
-/* =========================
-   DELIVERY BAR
-========================= */
+.gold-button:hover{
+    background:#956127;
+}
 
-.delivery-strip{
-    width:88%;
-    max-width:1250px;
-    margin:-35px auto 0;
-    position:relative;
-    z-index:5;
-    background:white;
-    box-shadow:0 10px 35px rgba(0,0,0,.09);
+.outline-button{
+    background:transparent;
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.6);
+
+    padding:14px 28px;
+
+    font-size:13px;
+}
+
+.hero-stat{
+    position:absolute;
+    right:6%;
+    bottom:45px;
+
+    z-index:3;
+
+    color:#fff;
+
+    text-align:right;
+}
+
+.hero-stat strong{
+    display:block;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:30px;
+}
+
+.hero-stat span{
+    font-size:10px;
+    letter-spacing:2px;
+    color:#d4d0c8;
+}
+
+/* =====================================================
+   TRUST BAR
+===================================================== */
+
+.trust-bar{
+    background:#2b241c;
+
+    color:#eee;
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    border-radius:6px;
-    overflow:hidden;
+    grid-template-columns:repeat(4,1fr);
+
+    padding:25px 7%;
 }
 
-.delivery-item{
-    padding:23px;
-    display:flex;
-    align-items:center;
-    gap:15px;
-    border-right:1px solid #eee;
-}
-
-.delivery-item:last-child{
-    border:none;
-}
-
-.delivery-icon{
-    width:43px;
-    height:43px;
-    border-radius:50%;
-    background:#f4e9e2;
+.trust-item{
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:20px;
+
+    gap:13px;
+
+    border-right:1px solid #51483c;
 }
 
-.delivery-item strong{
+.trust-item:last-child{
+    border:none;
+}
+
+.trust-icon{
+    color:#d1a15d;
+    font-size:21px;
+}
+
+.trust-item strong{
     display:block;
-    font-size:14px;
-    margin-bottom:3px;
-}
-
-.delivery-item span{
     font-size:12px;
-    color:#777;
 }
 
-/* =========================
+.trust-item span{
+    color:#aaa;
+    font-size:10px;
+}
+
+/* =====================================================
    SECTION
-========================= */
+===================================================== */
 
 .section{
     width:88%;
     max-width:1250px;
-    margin:90px auto;
+    margin:85px auto;
 }
 
-.section-header{
+.section-heading{
     display:flex;
-    align-items:end;
     justify-content:space-between;
+    align-items:end;
+
     margin-bottom:30px;
 }
 
+.heading-label{
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    color:#a16a2d;
+
+    font-size:10px;
+
+    margin-bottom:6px;
+}
+
 .section-title{
-    font-family:"Playfair Display",serif;
-    font-size:39px;
-    color:#304b36;
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:47px;
+
+    color:#33281d;
+
+    line-height:1;
 }
 
-.section-subtitle{
+.section-description{
     color:#777;
-    margin-top:7px;
-    font-size:14px;
+
+    font-size:13px;
+
+    margin-top:9px;
 }
 
-.view-all{
-    color:#b45e56;
-    font-size:14px;
+.view-link{
+    color:#956127;
+
+    font-size:12px;
+
     font-weight:600;
 }
 
-/* =========================
-   CATEGORIES
-========================= */
+/* =====================================================
+   COLLECTION CATEGORIES
+===================================================== */
 
-.categories{
+.collections{
     display:grid;
-    grid-template-columns:repeat(6,1fr);
-    gap:18px;
+
+    grid-template-columns:
+        1.5fr
+        1fr
+        1fr;
+
+    grid-template-rows:260px 260px;
+
+    gap:15px;
 }
 
-.category{
-    text-align:center;
+.collection{
+    position:relative;
+    overflow:hidden;
+
     cursor:pointer;
 }
 
-.category-image{
-    height:170px;
-    overflow:hidden;
-    border-radius:5px;
-    margin-bottom:14px;
+.collection:first-child{
+    grid-row:span 2;
 }
 
-.category-image img{
+.collection img{
     height:100%;
     object-fit:cover;
-    transition:.4s;
+
+    transition:.6s;
 }
 
-.category:hover img{
-    transform:scale(1.07);
+.collection:hover img{
+    transform:scale(1.06);
 }
 
-.category h3{
-    font-family:"Playfair Display",serif;
-    font-size:19px;
-    color:#304b36;
+.collection-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            transparent 35%,
+            rgba(0,0,0,.75)
+        );
+
+    display:flex;
+    align-items:end;
+
+    padding:28px;
 }
 
-.category p{
-    font-size:12px;
-    color:#888;
+.collection-text{
+    color:white;
+}
+
+.collection-text small{
+    color:#d8b77e;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    font-size:9px;
+}
+
+.collection-text h3{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:32px;
+
     margin-top:4px;
 }
 
-/* =========================
+/* =====================================================
    PRODUCTS
-========================= */
+===================================================== */
 
-.products{
+.product-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:22px;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:20px;
 }
 
-.product{
-    background:white;
-    border:1px solid #eee9e1;
-    position:relative;
+.product-card{
+    background:#fff;
+
+    border:1px solid #e5dfd5;
+
     transition:.3s;
+
+    position:relative;
 }
 
-.product:hover{
+.product-card:hover{
     transform:translateY(-5px);
-    box-shadow:0 15px 35px rgba(48,75,54,.10);
+
+    box-shadow:
+        0 18px 35px
+        rgba(59,42,24,.10);
 }
 
 .product-image{
-    height:310px;
-    position:relative;
+    height:320px;
+
+    background:#eee8de;
+
     overflow:hidden;
-    background:#f5f1ec;
+
+    position:relative;
 }
 
 .product-image img{
     height:100%;
+
     object-fit:cover;
+
     transition:.5s;
 }
 
-.product:hover .product-image img{
-    transform:scale(1.05);
+.product-card:hover .product-image img{
+    transform:scale(1.04);
 }
 
-.product-badge{
+.badge{
     position:absolute;
+
     top:13px;
     left:13px;
-    background:#304b36;
-    color:white;
+
+    background:#2c241c;
+
+    color:#fff;
+
     padding:6px 10px;
-    font-size:10px;
-    text-transform:uppercase;
+
+    font-size:9px;
+
     letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    z-index:2;
 }
 
 .wishlist{
     position:absolute;
-    right:13px;
-    top:13px;
-    background:white;
-    width:35px;
-    height:35px;
+
+    top:12px;
+    right:12px;
+
+    width:34px;
+    height:34px;
+
+    background:#fff;
+
     border-radius:50%;
+
     display:flex;
-    align-items:center;
+
     justify-content:center;
+    align-items:center;
+
+    z-index:2;
+
+    border:none;
+
     font-size:17px;
 }
 
-.product-info{
-    padding:19px;
+.product-details{
+    padding:18px;
 }
 
 .product-category{
-    color:#b45e56;
-    font-size:11px;
+    color:#a16a2d;
+
     text-transform:uppercase;
-    letter-spacing:1px;
+
+    letter-spacing:1.5px;
+
+    font-size:9px;
 }
 
 .product-name{
-    font-family:"Playfair Display",serif;
-    font-size:21px;
-    color:#304b36;
-    margin:6px 0;
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:24px;
+
+    margin:5px 0;
+
+    color:#342a21;
 }
 
-.rating{
-    color:#e39a38;
-    font-size:12px;
+.product-description{
+    color:#888;
+
+    font-size:11px;
+
+    line-height:1.5;
+}
+
+.product-bottom{
+    margin-top:14px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
 }
 
 .price{
-    margin-top:10px;
-    display:flex;
-    align-items:center;
-    gap:8px;
-}
-
-.current-price{
     font-weight:700;
-    font-size:17px;
+
+    color:#382b20;
+
+    font-size:16px;
 }
 
 .old-price{
     color:#999;
+
     text-decoration:line-through;
-    font-size:13px;
+
+    font-size:11px;
+
+    margin-left:5px;
 }
 
-.add-btn{
-    width:100%;
-    margin-top:15px;
-    padding:11px;
-    background:#304b36;
-    color:white;
+.add-cart{
     border:none;
-    border-radius:3px;
-    font-weight:600;
-    transition:.2s;
-}
 
-.add-btn:hover{
-    background:#c56b62;
-}
+    background:#8d5d29;
 
-/* =========================
-   OCCASIONS
-========================= */
-
-.occasions{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-}
-
-.occasion{
-    height:260px;
-    position:relative;
-    overflow:hidden;
-    border-radius:4px;
-}
-
-.occasion img{
-    height:100%;
-    object-fit:cover;
-    transition:.5s;
-}
-
-.occasion:hover img{
-    transform:scale(1.08);
-}
-
-.occasion-overlay{
-    position:absolute;
-    inset:0;
-    display:flex;
-    align-items:end;
-    padding:25px;
     color:white;
-    background:linear-gradient(transparent,rgba(0,0,0,.7));
-}
 
-.occasion h3{
-    font-family:"Playfair Display",serif;
-    font-size:27px;
-}
+    padding:9px 13px;
 
-/* =========================
-   FEATURE BANNER
-========================= */
+    font-size:10px;
 
-.feature{
-    width:100%;
-    background:#eef1e9;
-    padding:90px 6%;
-    display:flex;
-    align-items:center;
-    gap:70px;
-}
-
-.feature-image{
-    width:50%;
-    height:480px;
-    overflow:hidden;
-}
-
-.feature-image img{
-    height:100%;
-    object-fit:cover;
-}
-
-.feature-content{
-    max-width:500px;
-}
-
-.feature-label{
-    color:#b45e56;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    font-size:12px;
     font-weight:600;
 }
 
-.feature h2{
-    font-family:"Playfair Display",serif;
-    font-size:48px;
-    color:#304b36;
-    line-height:1.15;
-    margin:15px 0;
+.add-cart:hover{
+    background:#68431e;
 }
 
-.feature p{
-    color:#666;
-    line-height:1.8;
-    font-size:15px;
+/* =====================================================
+   HERITAGE FEATURE
+===================================================== */
+
+.heritage{
+    background:#e9e0d3;
+
+    padding:90px 6%;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+.heritage-image{
+    height:520px;
+
+    overflow:hidden;
+}
+
+.heritage-image img{
+    height:100%;
+
+    object-fit:cover;
+}
+
+.heritage-content{
+    max-width:530px;
+}
+
+.heritage-content .heading-label{
+    margin-bottom:10px;
+}
+
+.heritage-content h2{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:58px;
+
+    line-height:.98;
+
+    color:#34281d;
+
+    margin-bottom:22px;
+}
+
+.heritage-content p{
+    color:#665e55;
+
+    line-height:1.9;
+
+    font-size:14px;
+
     margin-bottom:25px;
 }
 
-/* =========================
+.feature-list{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:15px;
+
+    margin-bottom:30px;
+}
+
+.feature-list div{
+    border-top:1px solid #cfc3b2;
+
+    padding-top:12px;
+
+    font-size:12px;
+
+    color:#51473c;
+}
+
+/* =====================================================
+   ANTIQUE COLLECTION
+===================================================== */
+
+.antique-section{
+    background:#24201b;
+
+    padding:90px 6%;
+
+    color:#fff;
+}
+
+.antique-inner{
+    width:88%;
+    max-width:1250px;
+
+    margin:auto;
+}
+
+.antique-section .section-title{
+    color:#fff;
+}
+
+.antique-section .section-description{
+    color:#aaa;
+}
+
+.antique-grid{
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr 1fr;
+
+    gap:18px;
+}
+
+.antique-card{
+    position:relative;
+
+    height:400px;
+
+    overflow:hidden;
+}
+
+.antique-card img{
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:.86;
+
+    transition:.5s;
+}
+
+.antique-card:hover img{
+    transform:scale(1.06);
+
+    opacity:1;
+}
+
+.antique-overlay{
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:end;
+
+    padding:25px;
+
+    background:
+        linear-gradient(
+            transparent 40%,
+            rgba(0,0,0,.8)
+        );
+}
+
+.antique-overlay h3{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:31px;
+}
+
+.antique-overlay p{
+    color:#c9c0b5;
+
+    font-size:11px;
+
+    margin-top:4px;
+}
+
+/* =====================================================
+   TESTIMONIAL
+===================================================== */
+
+.testimonial{
+    text-align:center;
+
+    max-width:760px;
+
+    margin:100px auto;
+}
+
+.quote-mark{
+    font-family:"Cormorant Garamond",serif;
+
+    color:#b47b39;
+
+    font-size:70px;
+
+    line-height:.5;
+}
+
+.testimonial blockquote{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:34px;
+
+    line-height:1.3;
+
+    color:#3b3026;
+
+    margin:20px 0;
+}
+
+.testimonial span{
+    color:#8b8177;
+
+    font-size:11px;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+}
+
+/* =====================================================
    NEWSLETTER
-========================= */
+===================================================== */
 
 .newsletter{
-    background:#304b36;
-    color:white;
+    background:#d6c4aa;
+
     text-align:center;
-    padding:75px 20px;
+
+    padding:65px 20px;
 }
 
 .newsletter h2{
-    font-family:"Playfair Display",serif;
-    font-size:40px;
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:46px;
+
+    color:#34281d;
 }
 
 .newsletter p{
-    color:#d8ddd7;
-    margin:12px auto 25px;
+    color:#685e51;
+
+    font-size:13px;
+
+    margin:8px 0 25px;
 }
 
 .newsletter-form{
-    max-width:500px;
+    max-width:480px;
+
     margin:auto;
+
     display:flex;
 }
 
 .newsletter-form input{
     flex:1;
-    padding:14px;
+
     border:none;
+
+    padding:14px;
+
     outline:none;
+
+    background:#f8f5ef;
 }
 
 .newsletter-form button{
     border:none;
-    background:#c56b62;
+
+    background:#3b3025;
+
     color:white;
+
     padding:0 24px;
+
+    font-size:12px;
+
     font-weight:600;
 }
 
-/* =========================
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
-footer{
-    background:#fff;
+.footer{
+    background:#1f1b17;
+
+    color:#fff;
+
     padding:60px 7% 25px;
 }
 
 .footer-grid{
     display:grid;
-    grid-template-columns:2fr 1fr 1fr 1fr;
+
+    grid-template-columns:
+        2fr 1fr 1fr 1fr;
+
     gap:50px;
 }
 
 .footer-logo{
-    font-family:"Playfair Display",serif;
-    font-size:28px;
-    color:#304b36;
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:34px;
+
+    color:#d0a25e;
 }
 
 .footer-about{
-    color:#777;
-    line-height:1.7;
-    font-size:13px;
+    max-width:350px;
+
+    color:#999;
+
+    font-size:12px;
+
+    line-height:1.8;
+
     margin-top:12px;
-    max-width:330px;
 }
 
-footer h4{
-    color:#304b36;
-    margin-bottom:15px;
+.footer h4{
+    color:#e6d2b4;
+
+    font-size:12px;
+
+    margin-bottom:17px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
 }
 
-footer ul{
+.footer ul{
     list-style:none;
 }
 
-footer li{
-    color:#777;
-    font-size:13px;
+.footer li{
+    color:#999;
+
+    font-size:12px;
+
     margin:10px 0;
 }
 
-.copyright{
-    border-top:1px solid #eee;
-    margin-top:45px;
-    padding-top:20px;
-    color:#999;
-    font-size:12px;
-    display:flex;
-    justify-content:space-between;
+.footer li:hover{
+    color:#fff;
 }
 
-/* =========================
+.copyright{
+    border-top:1px solid #3c3731;
+
+    margin-top:45px;
+
+    padding-top:20px;
+
+    color:#777;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-size:10px;
+}
+
+/* =====================================================
    RESPONSIVE
-========================= */
+===================================================== */
 
 @media(max-width:1000px){
 
-    .nav{
+    .navigation{
         display:none;
     }
 
     .hero h1{
-        font-size:55px;
+        font-size:60px;
     }
 
-    .categories{
-        grid-template-columns:repeat(3,1fr);
-    }
-
-    .products{
+    .product-grid{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .occasions{
-        grid-template-columns:repeat(2,1fr);
+    .collections{
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:260px 260px 260px;
     }
 
-    .feature{
-        flex-direction:column;
+    .collection:first-child{
+        grid-row:span 2;
     }
 
-    .feature-image{
-        width:100%;
+    .heritage{
+        grid-template-columns:1fr;
+    }
+
+    .heritage-image{
+        height:400px;
+    }
+
+    .antique-grid{
+        grid-template-columns:1fr 1fr;
     }
 
     .footer-grid{
         grid-template-columns:1fr 1fr;
     }
+
 }
 
-@media(max-width:600px){
+@media(max-width:650px){
 
     .header{
         padding:0 20px;
     }
 
+    .navigation{
+        display:none;
+    }
+
     .hero{
-        min-height:550px;
+        min-height:600px;
     }
 
     .hero-content{
-        width:90%;
         padding-top:120px;
     }
 
     .hero h1{
-        font-size:42px;
+        font-size:47px;
     }
 
-    .hero p{
-        font-size:14px;
+    .hero-stat{
+        display:none;
     }
 
-    .delivery-strip{
-        grid-template-columns:1fr;
+    .hero-buttons{
+        flex-direction:column;
+
+        width:190px;
     }
 
-    .delivery-item{
-        border-right:none;
-        border-bottom:1px solid #eee;
+    .trust-bar{
+        grid-template-columns:1fr 1fr;
+        gap:20px;
     }
 
-    .categories{
-        grid-template-columns:repeat(2,1fr);
+    .trust-item{
+        border:none;
     }
 
-    .products{
-        grid-template-columns:1fr;
-    }
-
-    .occasions{
-        grid-template-columns:1fr;
+    .section{
+        width:90%;
     }
 
     .section-title{
-        font-size:31px;
+        font-size:39px;
     }
 
-    .section-header{
+    .section-heading{
         align-items:start;
     }
 
-    .feature{
-        padding:50px 6%;
+    .collections{
+        display:grid;
+        grid-template-columns:1fr;
+        grid-template-rows:300px;
     }
 
-    .feature-image{
-        height:350px;
+    .collection:first-child{
+        grid-row:auto;
     }
 
-    .feature h2{
-        font-size:38px;
+    .collections .collection{
+        height:260px;
+    }
+
+    .product-grid{
+        grid-template-columns:1fr;
+    }
+
+    .product-image{
+        height:390px;
+    }
+
+    .heritage{
+        padding:60px 5%;
+    }
+
+    .heritage-content h2{
+        font-size:45px;
+    }
+
+    .feature-list{
+        grid-template-columns:1fr;
+    }
+
+    .antique-grid{
+        grid-template-columns:1fr;
+    }
+
+    .antique-card{
+        height:400px;
     }
 
     .newsletter-form{
@@ -780,7 +1160,7 @@ footer li{
     }
 
     .newsletter-form button{
-        padding:14px;
+        padding:15px;
     }
 
     .footer-grid{
@@ -789,8 +1169,9 @@ footer li{
 
     .copyright{
         flex-direction:column;
-        gap:8px;
+        gap:10px;
     }
+
 }
 
 </style>
@@ -799,10 +1180,11 @@ footer li{
 
 <body>
 
+
 <!-- TOP BAR -->
 
 <div class="topbar">
-    Fresh flowers • Same-day delivery • Handcrafted by local florists
+    Complimentary shipping across India on orders above ₹2,500
 </div>
 
 
@@ -810,27 +1192,37 @@ footer li{
 
 <header class="header">
 
-    <div class="logo">
-        Bloom<span>&</span>Co.
-    </div>
+    <a href="#" class="logo">
+        Virasat
+        <small>INDIAN ART • IDOLS • ANTIQUES</small>
+    </a>
 
-    <nav class="nav">
+    <nav class="navigation">
         <a href="#">Home</a>
-        <a href="#shop">Flowers</a>
-        <a href="#occasions">Occasions</a>
         <a href="#collections">Collections</a>
-        <a href="#">Corporate Gifting</a>
+        <a href="#idols">Idols</a>
+        <a href="#antiques">Antiques</a>
+        <a href="#">New Arrivals</a>
+        <a href="#">Our Story</a>
     </nav>
 
     <div class="header-actions">
 
-        <div class="search-icon">⌕</div>
+        <div class="header-action">
+            ⌕
+        </div>
 
-        <div class="user-icon">♙</div>
+        <div class="header-action">
+            ♡
+        </div>
 
-        <div class="cart">
-            🛍
-            <div class="cart-count">0</div>
+        <div class="header-action">
+            ♙
+        </div>
+
+        <div class="header-action cart">
+            🛒
+            <span class="cart-count">0</span>
         </div>
 
     </div>
@@ -843,36 +1235,99 @@ footer li{
 <section class="hero">
 
     <img
-        src="https://www.flowerchimp.my/cdn/shop/files/sweet-kisses-1054314504_1800x.jpg?v=1768030688"
-        alt="Beautiful pastel flower bouquet"
+        class="hero-image"
+        src="https://www.buddha-art.com/wp-content/uploads/2023/08/Brass-Ganesha-Statue.jpg"
+        alt="Traditional Indian brass Ganesha sculpture"
     >
 
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
 
-        <div class="hero-small">
-            Freshly picked • Thoughtfully arranged
+        <div class="hero-kicker">
+            Timeless Indian craftsmanship
         </div>
 
         <h1>
-            Flowers that<br>
-            speak from the heart.
+            Bring home a piece of
+            <span>heritage.</span>
         </h1>
 
-        <p>
-            Handcrafted bouquets made with fresh seasonal blooms,
-            designed to make ordinary moments feel unforgettable.
+        <p class="hero-description">
+            Discover handcrafted idols, antique-inspired sculptures,
+            traditional art and timeless collectibles created by
+            skilled Indian artisans.
         </p>
 
         <div class="hero-buttons">
-            <button class="primary-btn">
-                Shop Flowers
+
+            <button class="gold-button">
+                Explore Collection
             </button>
 
-            <button class="secondary-btn">
-                Explore Collections
+            <button class="outline-button">
+                View New Arrivals
             </button>
+
+        </div>
+
+    </div>
+
+    <div class="hero-stat">
+        <strong>25+ Years</strong>
+        <span>CRAFTSMANSHIP & HERITAGE</span>
+    </div>
+
+</section>
+
+
+<!-- TRUST -->
+
+<section class="trust-bar">
+
+    <div class="trust-item">
+
+        <div class="trust-icon">◆</div>
+
+        <div>
+            <strong>Handcrafted</strong>
+            <span>Made by Indian artisans</span>
+        </div>
+
+    </div>
+
+
+    <div class="trust-item">
+
+        <div class="trust-icon">◇</div>
+
+        <div>
+            <strong>Authentic Materials</strong>
+            <span>Brass, bronze & wood</span>
+        </div>
+
+    </div>
+
+
+    <div class="trust-item">
+
+        <div class="trust-icon">◈</div>
+
+        <div>
+            <strong>Secure Packaging</strong>
+            <span>Carefully packed for delivery</span>
+        </div>
+
+    </div>
+
+
+    <div class="trust-item">
+
+        <div class="trust-icon">✦</div>
+
+        <div>
+            <strong>Pan-India Delivery</strong>
+            <span>Delivered to your doorstep</span>
         </div>
 
     </div>
@@ -880,159 +1335,154 @@ footer li{
 </section>
 
 
-<!-- DELIVERY STRIP -->
+<!-- COLLECTIONS -->
 
-<div class="delivery-strip">
+<section class="section" id="collections">
 
-    <div class="delivery-item">
-
-        <div class="delivery-icon">🌿</div>
+    <div class="section-heading">
 
         <div>
-            <strong>Freshness Guaranteed</strong>
-            <span>Hand-selected fresh flowers</span>
-        </div>
 
-    </div>
+            <div class="heading-label">
+                Explore the collection
+            </div>
 
-
-    <div class="delivery-item">
-
-        <div class="delivery-icon">🚚</div>
-
-        <div>
-            <strong>Same-Day Delivery</strong>
-            <span>Order before 4 PM</span>
-        </div>
-
-    </div>
-
-
-    <div class="delivery-item">
-
-        <div class="delivery-icon">💐</div>
-
-        <div>
-            <strong>Made by Florists</strong>
-            <span>Beautifully arranged by hand</span>
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- CATEGORIES -->
-
-<section class="section">
-
-    <div class="section-header">
-
-        <div>
             <h2 class="section-title">
-                Shop by Flower
+                Discover your heritage
             </h2>
 
-            <p class="section-subtitle">
-                Find the perfect bloom for every feeling.
+            <p class="section-description">
+                Traditional forms, refined craftsmanship and timeless character.
             </p>
+
         </div>
 
-        <a href="#" class="view-all">
-            View all →
+        <a href="#" class="view-link">
+            View all collections →
         </a>
 
     </div>
 
 
-    <div class="categories">
+    <div class="collections">
 
-        <div class="category">
 
-            <div class="category-image">
-                <img
-                    src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=500&q=85"
-                    alt="Roses"
-                >
+        <div class="collection">
+
+            <img
+                src="https://www.buddha-art.com/wp-content/uploads/2023/08/Brass-Ganesha-Statue.jpg"
+                alt="Brass deity sculpture"
+            >
+
+            <div class="collection-overlay">
+
+                <div class="collection-text">
+
+                    <small>Divine craftsmanship</small>
+
+                    <h3>
+                        Sacred Idols
+                    </h3>
+
+                </div>
+
             </div>
-
-            <h3>Roses</h3>
-            <p>Love & romance</p>
 
         </div>
 
 
-        <div class="category">
+        <div class="collection">
 
-            <div class="category-image">
-                <img
-                    src="https://dicentra.ua/assets/images/products/3845/76ab21d072df986ebc35a981fdf49a96fc93a04d.jpg"
-                    alt="Tulips"
-                >
+            <img
+                src="https://www.statuestudio.com/cdn/shop/products/brass-ganesha-idol-sitting-on-mouse-antique-finish-10-inch-1.jpg"
+                alt="Antique brass Ganesha"
+            >
+
+            <div class="collection-overlay">
+
+                <div class="collection-text">
+
+                    <small>Traditional</small>
+
+                    <h3>
+                        Brass Art
+                    </h3>
+
+                </div>
+
             </div>
-
-            <h3>Tulips</h3>
-            <p>Elegant & graceful</p>
 
         </div>
 
 
-        <div class="category">
+        <div class="collection">
 
-            <div class="category-image">
-                <img
-                    src="https://www.bloomsflora.com/cdn/shop/files/sunny-elegance-sunflower-bouquet.jpg"
-                    alt="Sunflowers"
-                >
+            <img
+                src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=1000&q=90"
+                alt="Indian decorative art"
+            >
+
+            <div class="collection-overlay">
+
+                <div class="collection-text">
+
+                    <small>Decorative</small>
+
+                    <h3>
+                        Vintage Decor
+                    </h3>
+
+                </div>
+
             </div>
-
-            <h3>Sunflowers</h3>
-            <p>Joy & happiness</p>
 
         </div>
 
 
-        <div class="category">
+        <div class="collection">
 
-            <div class="category-image">
-                <img
-                    src="https://images.unsplash.com/photo-1577303935007-0d306ee638cf?auto=format&fit=crop&w=500&q=85"
-                    alt="Lilies"
-                >
+            <img
+                src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=1000&q=90"
+                alt="Traditional artwork"
+            >
+
+            <div class="collection-overlay">
+
+                <div class="collection-text">
+
+                    <small>Fine art</small>
+
+                    <h3>
+                        Heritage Art
+                    </h3>
+
+                </div>
+
             </div>
-
-            <h3>Lilies</h3>
-            <p>Pure & peaceful</p>
 
         </div>
 
 
-        <div class="category">
+        <div class="collection">
 
-            <div class="category-image">
-                <img
-                    src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=500&q=85"
-                    alt="Orchids"
-                >
+            <img
+                src="https://images.unsplash.com/photo-1609766857041-ed402ea8069a?auto=format&fit=crop&w=1000&q=90"
+                alt="Decorative sculpture"
+            >
+
+            <div class="collection-overlay">
+
+                <div class="collection-text">
+
+                    <small>Collectibles</small>
+
+                    <h3>
+                        Rare Finds
+                    </h3>
+
+                </div>
+
             </div>
-
-            <h3>Orchids</h3>
-            <p>Luxury & beauty</p>
-
-        </div>
-
-
-        <div class="category">
-
-            <div class="category-image">
-                <img
-                    src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=500&q=85"
-                    alt="Mixed flowers"
-                >
-            </div>
-
-            <h3>Mixed Blooms</h3>
-            <p>Colourful & cheerful</p>
 
         </div>
 
@@ -1043,343 +1493,446 @@ footer li{
 
 <!-- PRODUCTS -->
 
-<section class="section" id="shop">
+<section class="section" id="idols">
 
-    <div class="section-header">
+    <div class="section-heading">
 
         <div>
+
+            <div class="heading-label">
+                Curated for you
+            </div>
+
             <h2 class="section-title">
-                Bestselling Bouquets
+                Signature Idols
             </h2>
 
-            <p class="section-subtitle">
-                Our most-loved arrangements, made fresh to order.
+            <p class="section-description">
+                Handcrafted pieces designed for homes, temples and collectors.
             </p>
+
         </div>
 
-        <a href="#" class="view-all">
-            Shop all →
+        <a href="#" class="view-link">
+            Shop all idols →
         </a>
 
     </div>
 
 
-    <div class="products">
+    <div class="product-grid">
 
 
         <!-- PRODUCT 1 -->
 
-        <div class="product">
+        <article class="product-card">
 
             <div class="product-image">
 
-                <span class="product-badge">
+                <span class="badge">
                     Bestseller
                 </span>
 
-                <div class="wishlist">♡</div>
+                <button class="wishlist">
+                    ♡
+                </button>
 
                 <img
-                    src="https://images.unsplash.com/photo-1548094990-c16ca90f1f0d?auto=format&fit=crop&w=700&q=85"
-                    alt="Red rose bouquet"
+                    src="https://www.statuestudio.com/cdn/shop/products/brass-ganesha-idol-sitting-on-mouse-antique-finish-10-inch-1.jpg"
+                    alt="Antique brass Ganesha idol"
                 >
 
             </div>
 
-            <div class="product-info">
+            <div class="product-details">
 
                 <div class="product-category">
-                    Roses
+                    Brass Idols
                 </div>
 
                 <h3 class="product-name">
-                    Eternal Red Roses
+                    Seated Ganesha
                 </h3>
 
-                <div class="rating">
-                    ★★★★★
-                    <span style="color:#999;"> (128)</span>
-                </div>
+                <p class="product-description">
+                    Handcrafted solid brass idol with an antique finish.
+                </p>
 
-                <div class="price">
-                    <span class="current-price">₹899</span>
-                    <span class="old-price">₹1,099</span>
-                </div>
+                <div class="product-bottom">
 
-                <button class="add-btn">
-                    Add to Cart
-                </button>
+                    <div class="price">
+                        ₹13,500
+                    </div>
+
+                    <button class="add-cart">
+                        Add to Cart
+                    </button>
+
+                </div>
 
             </div>
 
-        </div>
+        </article>
 
 
         <!-- PRODUCT 2 -->
 
-        <div class="product">
+        <article class="product-card">
 
             <div class="product-image">
 
-                <span class="product-badge">
+                <span class="badge">
                     New
                 </span>
 
-                <div class="wishlist">♡</div>
+                <button class="wishlist">
+                    ♡
+                </button>
 
                 <img
-                    src="https://www.flowerchimp.my/cdn/shop/files/sweet-kisses-1054314504_1800x.jpg?v=1768030688"
-                    alt="Pastel mixed bouquet"
+                    src="https://budhshiv.com/cdn/shop/files/IMG_9450.jpg"
+                    alt="Antique gold Ganesha idol"
                 >
 
             </div>
 
-            <div class="product-info">
+            <div class="product-details">
 
                 <div class="product-category">
-                    Mixed Flowers
+                    Fine Brass
                 </div>
 
                 <h3 class="product-name">
-                    Pastel Garden
+                    Antique Gold Ganesha
                 </h3>
 
-                <div class="rating">
-                    ★★★★★
-                    <span style="color:#999;"> (84)</span>
-                </div>
+                <p class="product-description">
+                    Detailed brass sculpture with a rich antique-gold finish.
+                </p>
 
-                <div class="price">
-                    <span class="current-price">₹1,349</span>
-                    <span class="old-price">₹1,599</span>
-                </div>
+                <div class="product-bottom">
 
-                <button class="add-btn">
-                    Add to Cart
-                </button>
+                    <div class="price">
+                        ₹8,392
+                    </div>
+
+                    <button class="add-cart">
+                        Add to Cart
+                    </button>
+
+                </div>
 
             </div>
 
-        </div>
+        </article>
 
 
         <!-- PRODUCT 3 -->
 
-        <div class="product">
+        <article class="product-card">
 
             <div class="product-image">
 
-                <span class="product-badge">
-                    Popular
+                <span class="badge">
+                    Handcrafted
                 </span>
 
-                <div class="wishlist">♡</div>
+                <button class="wishlist">
+                    ♡
+                </button>
 
                 <img
-                    src="https://static-assets-prod.fnp.com/images/pr/qatar/l/v20250728125409/ravishing-sunflowers-beautifully-tied-bouquet_1.jpg"
-                    alt="Sunflower bouquet"
+                    src="https://www.raniartsandteak.co.in/cdn/shop/files/ganesha-with-prabhavali.jpg"
+                    alt="Ganesha with Prabhavali"
                 >
 
             </div>
 
-            <div class="product-info">
+            <div class="product-details">
 
                 <div class="product-category">
-                    Sunflowers
+                    Temple Art
                 </div>
 
                 <h3 class="product-name">
-                    Golden Sunshine
+                    Ganesha Prabhavali
                 </h3>
 
-                <div class="rating">
-                    ★★★★★
-                    <span style="color:#999;"> (96)</span>
-                </div>
+                <p class="product-description">
+                    Traditional brass sculpture framed by an ornate Prabhavali.
+                </p>
 
-                <div class="price">
-                    <span class="current-price">₹1,099</span>
-                    <span class="old-price">₹1,299</span>
-                </div>
+                <div class="product-bottom">
 
-                <button class="add-btn">
-                    Add to Cart
-                </button>
+                    <div class="price">
+                        ₹10,800
+                    </div>
+
+                    <button class="add-cart">
+                        Add to Cart
+                    </button>
+
+                </div>
 
             </div>
 
-        </div>
+        </article>
 
 
         <!-- PRODUCT 4 -->
 
-        <div class="product">
+        <article class="product-card">
 
             <div class="product-image">
 
-                <span class="product-badge">
-                    Premium
+                <span class="badge">
+                    Collector's Pick
                 </span>
 
-                <div class="wishlist">♡</div>
+                <button class="wishlist">
+                    ♡
+                </button>
 
                 <img
-                    src="https://euroflorist.ergonode.cloud/api/multimedia/file/d17838ac-699c-4743-b3cd-56cf89dfef06.jpg"
-                    alt="Premium colorful flower bouquet"
+                    src="https://shobitam.in/cdn/shop/files/BRASS_PRABHAVALI_GANESHA_IDOL.jpg"
+                    alt="Large brass Prabhavali Ganesha"
                 >
 
             </div>
 
-            <div class="product-info">
+            <div class="product-details">
 
                 <div class="product-category">
-                    Premium
+                    Collector Series
                 </div>
 
                 <h3 class="product-name">
-                    Garden Celebration
+                    Grand Prabhavali
                 </h3>
 
-                <div class="rating">
-                    ★★★★★
-                    <span style="color:#999;"> (73)</span>
-                </div>
+                <p class="product-description">
+                    Statement brass sculpture inspired by traditional temple art.
+                </p>
 
-                <div class="price">
-                    <span class="current-price">₹1,799</span>
-                    <span class="old-price">₹2,099</span>
-                </div>
+                <div class="product-bottom">
 
-                <button class="add-btn">
-                    Add to Cart
-                </button>
+                    <div class="price">
+                        ₹1,18,200
+                    </div>
+
+                    <button class="add-cart">
+                        Add to Cart
+                    </button>
+
+                </div>
 
             </div>
 
-        </div>
+        </article>
 
     </div>
 
 </section>
 
 
-<!-- OCCASIONS -->
+<!-- HERITAGE STORY -->
 
-<section class="section" id="occasions">
+<section class="heritage">
 
-    <div class="section-header">
-
-        <div>
-            <h2 class="section-title">
-                Flowers for Every Moment
-            </h2>
-
-            <p class="section-subtitle">
-                Whatever you're celebrating, we have a bouquet for it.
-            </p>
-        </div>
-
-    </div>
-
-
-    <div class="occasions">
-
-        <div class="occasion">
-
-            <img
-                src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=85"
-                alt="Wedding flowers"
-            >
-
-            <div class="occasion-overlay">
-                <h3>Weddings</h3>
-            </div>
-
-        </div>
-
-
-        <div class="occasion">
-
-            <img
-                src="https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?auto=format&fit=crop&w=800&q=85"
-                alt="Birthday flowers"
-            >
-
-            <div class="occasion-overlay">
-                <h3>Birthdays</h3>
-            </div>
-
-        </div>
-
-
-        <div class="occasion">
-
-            <img
-                src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=85"
-                alt="Anniversary flowers"
-            >
-
-            <div class="occasion-overlay">
-                <h3>Anniversaries</h3>
-            </div>
-
-        </div>
-
-
-        <div class="occasion">
-
-            <img
-                src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=85"
-                alt="Romantic flowers"
-            >
-
-            <div class="occasion-overlay">
-                <h3>Just Because</h3>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- FEATURE -->
-
-<section class="feature">
-
-    <div class="feature-image">
+    <div class="heritage-image">
 
         <img
-            src="https://www.bloomsflora.com/cdn/shop/files/sunny-elegance-sunflower-bouquet.jpg"
-            alt="Fresh flower arrangement"
+            src="https://images.unsplash.com/photo-1609766857041-ed402ea8069a?auto=format&fit=crop&w=1200&q=90"
+            alt="Indian artisan craftsmanship"
         >
 
     </div>
 
 
-    <div class="feature-content">
+    <div class="heritage-content">
 
-        <div class="feature-label">
-            The Bloom Promise
+        <div class="heading-label">
+            Our philosophy
         </div>
 
         <h2>
-            Freshness you can see.
+            Objects with a story worth keeping.
         </h2>
 
         <p>
-            Every bouquet is prepared by experienced florists using
-            carefully selected blooms. We focus on freshness,
-            beautiful presentation and thoughtful delivery from
-            our studio to your doorstep.
+            Virasat brings together traditional Indian craftsmanship and
+            contemporary collecting. Every piece is selected for its
+            character, material, detailing and ability to become part
+            of a home for generations.
         </p>
 
-        <button class="primary-btn">
-            Discover Our Story
+        <div class="feature-list">
+
+            <div>
+                <strong>01</strong><br>
+                Artisan Crafted
+            </div>
+
+            <div>
+                <strong>02</strong><br>
+                Heritage Inspired
+            </div>
+
+            <div>
+                <strong>03</strong><br>
+                Quality Materials
+            </div>
+
+            <div>
+                <strong>04</strong><br>
+                Collector Friendly
+            </div>
+
+        </div>
+
+        <button class="gold-button">
+            Discover Virasat
         </button>
 
     </div>
+
+</section>
+
+
+<!-- ANTIQUES -->
+
+<section class="antique-section" id="antiques">
+
+    <div class="antique-inner">
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="heading-label">
+                    For collectors
+                </div>
+
+                <h2 class="section-title">
+                    The Antique Edit
+                </h2>
+
+                <p class="section-description">
+                    Character-rich pieces inspired by India's artistic heritage.
+                </p>
+
+            </div>
+
+            <a href="#" class="view-link">
+                Explore antiques →
+            </a>
+
+        </div>
+
+
+        <div class="antique-grid">
+
+
+            <div class="antique-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1564399579883-451a5d44ec08?auto=format&fit=crop&w=1000&q=90"
+                    alt="Vintage antique sculpture"
+                >
+
+                <div class="antique-overlay">
+
+                    <div>
+
+                        <h3>
+                            Temple Collectibles
+                        </h3>
+
+                        <p>
+                            Inspired by centuries-old craftsmanship
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="antique-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=1000&q=90"
+                    alt="Traditional Indian artwork"
+                >
+
+                <div class="antique-overlay">
+
+                    <div>
+
+                        <h3>
+                            Vintage Art
+                        </h3>
+
+                        <p>
+                            Traditional art for refined interiors
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="antique-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=1000&q=90"
+                    alt="Decorative antique object"
+                >
+
+                <div class="antique-overlay">
+
+                    <div>
+
+                        <h3>
+                            Rare Objects
+                        </h3>
+
+                        <p>
+                            Distinctive pieces for serious collectors
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TESTIMONIAL -->
+
+<section class="testimonial">
+
+    <div class="quote-mark">
+        “
+    </div>
+
+    <blockquote>
+        "A beautiful object does more than decorate a room.
+        It carries a piece of history into the future."
+    </blockquote>
+
+    <span>
+        The Virasat Collection
+    </span>
 
 </section>
 
@@ -1389,45 +1942,46 @@ footer li{
 <section class="newsletter">
 
     <h2>
-        Stay in full bloom.
+        Enter the world of Virasat.
     </h2>
 
     <p>
-        Get seasonal flower inspiration, new arrivals and exclusive offers.
+        New collections, rare finds and stories from Indian craftsmanship.
     </p>
 
-    <div class="newsletter-form">
+    <form class="newsletter-form">
 
         <input
             type="email"
-            placeholder="Enter your email address"
+            placeholder="Your email address"
         >
 
         <button>
             Subscribe
         </button>
 
-    </div>
+    </form>
 
 </section>
 
 
 <!-- FOOTER -->
 
-<footer>
+<footer class="footer">
 
     <div class="footer-grid">
+
 
         <div>
 
             <div class="footer-logo">
-                Bloom&Co.
+                Virasat
             </div>
 
             <p class="footer-about">
-                Fresh flowers, thoughtfully designed.
-                Beautiful bouquets for life's little and
-                big moments.
+                A curated destination for Indian idols,
+                handcrafted sculptures, heritage art and
+                collectible objects.
             </p>
 
         </div>
@@ -1438,11 +1992,11 @@ footer li{
             <h4>Shop</h4>
 
             <ul>
-                <li>Roses</li>
-                <li>Tulips</li>
-                <li>Sunflowers</li>
-                <li>Orchids</li>
-                <li>Mixed Flowers</li>
+                <li>Brass Idols</li>
+                <li>Bronze Sculptures</li>
+                <li>Wooden Art</li>
+                <li>Antique Decor</li>
+                <li>Collectibles</li>
             </ul>
 
         </div>
@@ -1450,14 +2004,14 @@ footer li{
 
         <div>
 
-            <h4>Occasions</h4>
+            <h4>Information</h4>
 
             <ul>
-                <li>Birthday</li>
-                <li>Anniversary</li>
-                <li>Wedding</li>
-                <li>Congratulations</li>
-                <li>Just Because</li>
+                <li>About Virasat</li>
+                <li>Artisan Stories</li>
+                <li>Shipping</li>
+                <li>Returns</li>
+                <li>Care Guide</li>
             </ul>
 
         </div>
@@ -1468,11 +2022,11 @@ footer li{
             <h4>Customer Care</h4>
 
             <ul>
-                <li>Track Your Order</li>
-                <li>Delivery Information</li>
-                <li>Returns & Refunds</li>
                 <li>Contact Us</li>
+                <li>Track Order</li>
                 <li>FAQ</li>
+                <li>WhatsApp Support</li>
+                <li>Bulk Enquiries</li>
             </ul>
 
         </div>
@@ -1483,11 +2037,11 @@ footer li{
     <div class="copyright">
 
         <span>
-            © 2026 Bloom & Co. All rights reserved.
+            © 2026 Virasat. All rights reserved.
         </span>
 
         <span>
-            Made with flowers & care.
+            Indian Art • Heritage • Craftsmanship
         </span>
 
     </div>
@@ -1497,13 +2051,16 @@ footer li{
 
 <script>
 
-/* Simple cart interaction */
+/* =========================
+   CART
+========================= */
 
 let cartCount = 0;
 
-const cartCounter = document.querySelector(".cart-count");
+const cartCounter =
+    document.querySelector(".cart-count");
 
-document.querySelectorAll(".add-btn").forEach(button => {
+document.querySelectorAll(".add-cart").forEach(button => {
 
     button.addEventListener("click", () => {
 
@@ -1511,34 +2068,57 @@ document.querySelectorAll(".add-btn").forEach(button => {
 
         cartCounter.textContent = cartCount;
 
+        const originalText = button.textContent;
+
         button.textContent = "Added ✓";
 
         setTimeout(() => {
-            button.textContent = "Add to Cart";
-        }, 1200);
+
+            button.textContent = originalText;
+
+        },1200);
 
     });
 
 });
 
 
-/* Wishlist interaction */
+/* =========================
+   WISHLIST
+========================= */
 
 document.querySelectorAll(".wishlist").forEach(button => {
 
     button.addEventListener("click", () => {
 
-        if(button.textContent === "♡"){
+        if(button.textContent.trim() === "♡"){
+
             button.textContent = "♥";
-            button.style.color = "#c56b62";
+            button.style.color = "#a15e27";
+
         }else{
+
             button.textContent = "♡";
-            button.style.color = "#292621";
+            button.style.color = "#29251f";
+
         }
 
     });
 
 });
+
+
+/* =========================
+   SEARCH ICON
+========================= */
+
+document
+    .querySelector(".header-action")
+    .addEventListener("click", () => {
+
+        alert("Search functionality can be connected here.");
+
+    });
 
 </script>
 
