@@ -1,14 +1,10 @@
-HTML
-
-```
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NovaShop</title>
+<title>LUXE - Shopping Store</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -16,142 +12,158 @@ HTML
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    font-family:Poppins,sans-serif;
 }
 
 body{
-    background:#f4f7fb;
+    background:#f5f7fb;
     color:#222;
 }
 
-/* Header */
+/* NAVBAR */
 
-header{
+nav{
     background:#fff;
-    padding:15px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    padding:18px 7%;
     position:sticky;
     top:0;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
     z-index:100;
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
 }
 
 .logo{
     font-size:28px;
     font-weight:700;
-    color:#5b3df5;
+    color:#4f46e5;
 }
 
-nav a{
+.menu{
+    display:flex;
+    gap:30px;
+}
+
+.menu a{
     text-decoration:none;
     color:#555;
-    margin:0 15px;
     font-weight:500;
 }
 
 .icons{
     display:flex;
-    gap:15px;
+    gap:18px;
     font-size:22px;
 }
 
-/* Hero */
+/* SEARCH */
+
+.search-bar{
+    width:86%;
+    margin:25px auto;
+    background:#fff;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    padding:14px 18px;
+    box-shadow:0 5px 15px rgba(0,0,0,.06);
+}
+
+.search-bar input{
+    width:100%;
+    border:none;
+    outline:none;
+    font-size:15px;
+    margin-left:10px;
+}
+
+/* HERO */
 
 .hero{
-    margin:30px 8%;
-    background:linear-gradient(135deg,#5b3df5,#8d6bff);
-    border-radius:25px;
-    padding:60px;
-    color:#fff;
+    width:86%;
+    margin:auto;
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+    border-radius:24px;
+    padding:55px;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    color:#fff;
     flex-wrap:wrap;
 }
 
 .hero h1{
-    font-size:48px;
-    margin-bottom:15px;
+    font-size:46px;
+    line-height:1.2;
 }
 
 .hero p{
-    width:450px;
-    line-height:1.7;
+    margin:18px 0;
+    width:420px;
+    opacity:.95;
 }
 
 .hero button{
-    margin-top:25px;
-    padding:15px 35px;
+    padding:14px 28px;
     border:none;
-    border-radius:30px;
+    border-radius:12px;
     background:#fff;
-    color:#5b3df5;
+    color:#4f46e5;
     font-weight:600;
     cursor:pointer;
 }
 
-/* Search */
+/* CATEGORY */
 
-.search{
-    margin:20px 8%;
+.section{
+    width:86%;
+    margin:45px auto 20px;
 }
 
-.search input{
-    width:100%;
-    padding:16px 20px;
-    border:none;
-    border-radius:15px;
-    font-size:16px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+.section h2{
+    margin-bottom:20px;
 }
-
-/* Categories */
 
 .categories{
-    margin:25px 8%;
-    display:flex;
-    gap:15px;
-    flex-wrap:wrap;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+    gap:18px;
 }
 
-.categories button{
-    border:none;
-    padding:10px 22px;
-    border-radius:30px;
+.cat{
     background:#fff;
+    border-radius:18px;
+    padding:22px;
+    text-align:center;
+    box-shadow:0 6px 18px rgba(0,0,0,.05);
+    transition:.3s;
     cursor:pointer;
-    font-weight:500;
-    box-shadow:0 5px 12px rgba(0,0,0,.05);
 }
 
-.categories button:first-child{
-    background:#5b3df5;
-    color:#fff;
+.cat:hover{
+    transform:translateY(-6px);
 }
 
-/* Products */
-
-.title{
-    margin:30px 8% 15px;
-    font-size:28px;
-    font-weight:600;
+.cat .icon{
+    font-size:40px;
+    margin-bottom:10px;
 }
+
+/* PRODUCTS */
 
 .products{
-    margin:0 8% 60px;
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:25px;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:24px;
 }
 
 .card{
     background:#fff;
-    border-radius:20px;
-    padding:18px;
-    transition:.3s;
+    border-radius:18px;
+    overflow:hidden;
     box-shadow:0 8px 20px rgba(0,0,0,.06);
+    transition:.3s;
 }
 
 .card:hover{
@@ -159,62 +171,130 @@ nav a{
 }
 
 .image{
-    height:180px;
+    height:210px;
     background:#eef2ff;
-    border-radius:15px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:70px;
+    font-size:80px;
+}
+
+.info{
+    padding:18px;
 }
 
 .tag{
     display:inline-block;
-    margin-top:15px;
-    background:#ece8ff;
-    color:#5b3df5;
-    padding:5px 12px;
+    background:#ede9fe;
+    color:#6d28d9;
+    padding:4px 10px;
     border-radius:20px;
     font-size:12px;
+    margin-bottom:10px;
 }
 
-.card h3{
-    margin:12px 0 6px;
+.info h3{
+    margin-bottom:8px;
+}
+
+.rating{
+    color:#f59e0b;
+    font-size:14px;
 }
 
 .price{
-    font-size:22px;
-    color:#5b3df5;
-    font-weight:700;
-    margin:10px 0;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:12px 0;
+}
+
+.price h2{
+    color:#4f46e5;
+    font-size:24px;
+}
+
+.old{
+    text-decoration:line-through;
+    color:#888;
 }
 
 .buy{
     width:100%;
-    padding:12px;
     border:none;
-    border-radius:12px;
-    background:#5b3df5;
+    background:#111827;
     color:#fff;
-    font-weight:600;
+    padding:12px;
+    border-radius:10px;
     cursor:pointer;
+    font-weight:600;
 }
 
 .buy:hover{
-    background:#4328d7;
+    background:#4f46e5;
 }
 
-/* Footer */
+/* BANNER */
+
+.offer{
+    width:86%;
+    margin:60px auto;
+    background:#111827;
+    color:#fff;
+    border-radius:22px;
+    padding:35px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.offer h2{
+    font-size:32px;
+}
+
+.offer button{
+    background:#4f46e5;
+    color:#fff;
+    border:none;
+    padding:14px 25px;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+/* FOOTER */
 
 footer{
     background:#fff;
+    padding:40px 7%;
+    margin-top:50px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:30px;
+}
+
+footer h3{
+    margin-bottom:12px;
+}
+
+footer p{
+    color:#666;
+    margin:6px 0;
+    font-size:14px;
+}
+
+.bottom{
     text-align:center;
-    padding:30px;
+    padding:18px;
     color:#777;
-    box-shadow:0 -5px 15px rgba(0,0,0,.05);
+    background:#eef2f7;
 }
 
 @media(max-width:768px){
+
+.menu{
+    display:none;
+}
 
 .hero{
     padding:35px;
@@ -228,123 +308,196 @@ footer{
     width:100%;
 }
 
-nav{
-    display:none;
-}
-
 }
 </style>
 
 </head>
 <body>
 
-<header>
-
-<div class="logo">NovaShop</div>
-
 <nav>
+
+<div class="logo">LUXE</div>
+
+<div class="menu">
 <a href="#">Home</a>
 <a href="#">Shop</a>
 <a href="#">Categories</a>
+<a href="#">Deals</a>
 <a href="#">Contact</a>
-</nav>
-
-<div class="icons">
-🛒 ❤️ 👤
 </div>
 
-</header>
+<div class="icons">
+🔍 🛒 👤
+</div>
+
+</nav>
+
+<div class="search-bar">
+🔎
+<input type="text" placeholder="Search for phones, shoes, laptops...">
+</div>
 
 <section class="hero">
 
 <div>
-<h1>Discover Your Style</h1>
-<p>
-Premium electronics, fashion, footwear and accessories with a modern shopping experience.
-</p>
-<button>Shop Now</button>
+<h1>Premium Shopping Experience</h1>
+<p>Discover trending fashion, electronics, and accessories with exclusive prices and fast delivery.</p>
+<button>Shop Collection</button>
 </div>
 
-<div style="font-size:150px;">🛍️</div>
+<div style="font-size:140px;">🛍️</div>
 
 </section>
 
-<div class="search">
-<input type="text" placeholder="Search for products...">
-</div>
+<div class="section">
+
+<h2>Shop by Category</h2>
 
 <div class="categories">
-<button>All</button>
-<button>Electronics</button>
-<button>Fashion</button>
-<button>Shoes</button>
-<button>Accessories</button>
+
+<div class="cat">
+<div class="icon">📱</div>
+<p>Mobiles</p>
 </div>
 
-<h2 class="title">Trending Products</h2>
-
-<section class="products">
-
-<div class="card">
-<div class="image">🎧</div>
-<div class="tag">Electronics</div>
-<h3>Wireless Headphones</h3>
-<p>Noise cancellation with 40hr battery.</p>
-<div class="price">₹7,999</div>
-<button class="buy">Add to Cart</button>
+<div class="cat">
+<div class="icon">💻</div>
+<p>Laptops</p>
 </div>
 
-<div class="card">
-<div class="image">⌚</div>
-<div class="tag">Wearable</div>
-<h3>Smart Watch</h3>
-<p>AMOLED display with fitness tracking.</p>
-<div class="price">₹12,499</div>
-<button class="buy">Add to Cart</button>
+<div class="cat">
+<div class="icon">⌚</div>
+<p>Watches</p>
 </div>
 
-<div class="card">
-<div class="image">👟</div>
-<div class="tag">Shoes</div>
-<h3>Running Shoes</h3>
-<p>Ultra-lightweight premium comfort.</p>
-<div class="price">₹4,299</div>
-<button class="buy">Add to Cart</button>
+<div class="cat">
+<div class="icon">👟</div>
+<p>Shoes</p>
 </div>
 
-<div class="card">
-<div class="image">🎒</div>
-<div class="tag">Accessories</div>
-<h3>Leather Backpack</h3>
-<p>Water resistant with 25L storage.</p>
-<div class="price">₹2,999</div>
-<button class="buy">Add to Cart</button>
+<div class="cat">
+<div class="icon">🎧</div>
+<p>Audio</p>
 </div>
+
+<div class="cat">
+<div class="icon">🎒</div>
+<p>Bags</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Trending Products</h2>
+
+<div class="products">
 
 <div class="card">
 <div class="image">📱</div>
-<div class="tag">Electronics</div>
-<h3>Flagship Smartphone</h3>
-<p>120Hz OLED display with 5G.</p>
-<div class="price">₹49,999</div>
+<div class="info">
+<span class="tag">New</span>
+<h3>iPhone 16 Pro</h3>
+<div class="rating">★★★★★</div>
+<div class="price">
+<h2>₹1,19,999</h2>
+<span class="old">₹1,29,999</span>
+</div>
 <button class="buy">Add to Cart</button>
+</div>
 </div>
 
 <div class="card">
 <div class="image">💻</div>
-<div class="tag">Electronics</div>
-<h3>Ultra Laptop</h3>
-<p>Intel i7 | 32GB RAM | 1TB SSD</p>
-<div class="price">₹84,999</div>
+<div class="info">
+<span class="tag">Best Seller</span>
+<h3>MacBook Air M4</h3>
+<div class="rating">★★★★★</div>
+<div class="price">
+<h2>₹94,999</h2>
+<span class="old">₹1,04,999</span>
+</div>
 <button class="buy">Add to Cart</button>
 </div>
+</div>
+
+<div class="card">
+<div class="image">⌚</div>
+<div class="info">
+<span class="tag">Hot</span>
+<h3>Galaxy Watch 8</h3>
+<div class="rating">★★★★☆</div>
+<div class="price">
+<h2>₹24,999</h2>
+<span class="old">₹29,999</span>
+</div>
+<button class="buy">Add to Cart</button>
+</div>
+</div>
+
+<div class="card">
+<div class="image">👟</div>
+<div class="info">
+<span class="tag">Limited</span>
+<h3>Nike Air Max</h3>
+<div class="rating">★★★★★</div>
+<div class="price">
+<h2>₹8,999</h2>
+<span class="old">₹11,999</span>
+</div>
+<button class="buy">Add to Cart</button>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<section class="offer">
+
+<div>
+<h2>Summer Mega Sale</h2>
+<p>Up to 60% OFF on selected premium brands.</p>
+</div>
+
+<button>Explore Deals</button>
 
 </section>
 
 <footer>
-© 2026 NovaShop • Modern Ecommerce UI
+
+<div>
+<h3>LUXE</h3>
+<p>Premium online shopping for electronics and fashion.</p>
+</div>
+
+<div>
+<h3>Company</h3>
+<p>About</p>
+<p>Careers</p>
+<p>Blog</p>
+</div>
+
+<div>
+<h3>Support</h3>
+<p>Help Center</p>
+<p>Returns</p>
+<p>Track Order</p>
+</div>
+
+<div>
+<h3>Contact</h3>
+<p>support@luxe.com</p>
+<p>+91 98765 43210</p>
+</div>
+
 </footer>
+
+<div class="bottom">
+© 2026 LUXE. All Rights Reserved.
+</div>
 
 </body>
 </html>
-```
