@@ -1,1810 +1,545 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Oak & Haven | Modern Furniture</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: "DM Sans", sans-serif;
-            background: #f7f5f1;
-            color: #24231f;
-        }
-
-        button,
-        input {
-            font-family: inherit;
-        }
-
-        img {
-            width: 100%;
-            display: block;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* =========================
-           TOP BAR
-        ========================= */
-
-        .top-bar {
-            background: #24231f;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            font-size: 13px;
-            letter-spacing: .3px;
-        }
-
-        /* =========================
-           NAVBAR
-        ========================= */
-
-        header {
-            background: rgba(247,245,241,.96);
-            border-bottom: 1px solid #ddd8cf;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(15px);
-        }
-
-        .nav {
-            max-width: 1400px;
-            margin: auto;
-            height: 78px;
-            padding: 0 35px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-        }
-
-        .logo {
-            font-family: "Playfair Display", serif;
-            font-size: 27px;
-            font-weight: 700;
-            white-space: nowrap;
-        }
-
-        .logo span {
-            color: #98724b;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 28px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .nav-links a {
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -7px;
-            width: 0;
-            height: 1px;
-            background: #98724b;
-            transition: .3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .icon-btn {
-            border: 1px solid #d9d4ca;
-            background: white;
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 17px;
-            position: relative;
-            transition: .2s;
-        }
-
-        .icon-btn:hover {
-            background: #24231f;
-            color: white;
-        }
-
-        .cart-count {
-            position: absolute;
-            right: -2px;
-            top: -4px;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: #98724b;
-            color: white;
-            font-size: 10px;
-            display: grid;
-            place-items: center;
-        }
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            max-width: 1400px;
-            margin: 25px auto 0;
-            padding: 0 25px;
-        }
-
-        .hero-box {
-            min-height: 620px;
-            border-radius: 22px;
-            overflow: hidden;
-            position: relative;
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(22,20,17,.75) 0%,
-                    rgba(22,20,17,.38) 45%,
-                    rgba(22,20,17,.05) 80%
-                ),
-                url("https://www.matsuzakaya.co.jp/nagoya/topics/3/lux/main/RenewalOpen/assets/img/floor7/if_01_01.jpg")
-                center/cover no-repeat;
-
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-content {
-            max-width: 600px;
-            padding: 70px;
-            color: white;
-        }
-
-        .eyebrow {
-            text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 3px;
-            font-weight: 700;
-            margin-bottom: 18px;
-        }
-
-        .hero h1 {
-            font-family: "Playfair Display", serif;
-            font-size: clamp(48px, 6vw, 82px);
-            line-height: .98;
-            margin-bottom: 25px;
-        }
-
-        .hero p {
-            font-size: 17px;
-            line-height: 1.7;
-            color: #eee;
-            max-width: 510px;
-            margin-bottom: 32px;
-        }
-
-        .primary-btn {
-            background: #98724b;
-            color: white;
-            border: none;
-            padding: 15px 27px;
-            border-radius: 4px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: .25s;
-        }
-
-        .primary-btn:hover {
-            background: #765536;
-            transform: translateY(-2px);
-        }
-
-        /* =========================
-           FEATURES
-        ========================= */
-
-        .features {
-            max-width: 1400px;
-            margin: 30px auto 70px;
-            padding: 0 25px;
-        }
-
-        .feature-grid {
-            background: white;
-            border: 1px solid #e3dfd7;
-            border-radius: 14px;
-            display: grid;
-            grid-template-columns: repeat(4,1fr);
-        }
-
-        .feature {
-            padding: 28px;
-            border-right: 1px solid #e5e1da;
-        }
-
-        .feature:last-child {
-            border-right: none;
-        }
-
-        .feature strong {
-            display: block;
-            margin-bottom: 6px;
-            font-size: 14px;
-        }
-
-        .feature span {
-            color: #77736b;
-            font-size: 13px;
-        }
-
-        /* =========================
-           SECTION
-        ========================= */
-
-        .section {
-            max-width: 1400px;
-            margin: 0 auto 90px;
-            padding: 0 25px;
-        }
-
-        .section-heading {
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-            margin-bottom: 30px;
-        }
-
-        .section-heading h2 {
-            font-family: "Playfair Display", serif;
-            font-size: 42px;
-        }
-
-        .section-heading p {
-            color: #77736b;
-            margin-top: 8px;
-        }
-
-        .view-all {
-            font-weight: 700;
-            border-bottom: 1px solid #24231f;
-            padding-bottom: 4px;
-        }
-
-        /* =========================
-           CATEGORIES
-        ========================= */
-
-        .categories {
-            display: grid;
-            grid-template-columns: repeat(4,1fr);
-            gap: 18px;
-        }
-
-        .category {
-            height: 300px;
-            border-radius: 15px;
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-        }
-
-        .category img {
-            height: 100%;
-            object-fit: cover;
-            transition: .5s;
-        }
-
-        .category:hover img {
-            transform: scale(1.05);
-        }
-
-        .category-overlay {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: end;
-            padding: 25px;
-            background: linear-gradient(transparent, rgba(0,0,0,.68));
-            color: white;
-        }
-
-        .category-overlay h3 {
-            font-family: "Playfair Display", serif;
-            font-size: 28px;
-        }
-
-        .category-overlay span {
-            font-size: 12px;
-            opacity: .8;
-        }
-
-        /* =========================
-           PRODUCTS
-        ========================= */
-
-        .filter-row {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 28px;
-            flex-wrap: wrap;
-        }
-
-        .filter {
-            border: 1px solid #d8d3ca;
-            background: white;
-            padding: 10px 18px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 13px;
-        }
-
-        .filter.active,
-        .filter:hover {
-            background: #24231f;
-            color: white;
-            border-color: #24231f;
-        }
-
-        .products {
-            display: grid;
-            grid-template-columns: repeat(4,1fr);
-            gap: 20px;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 14px;
-            overflow: hidden;
-            border: 1px solid #e5e0d8;
-            transition: .3s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 18px 40px rgba(0,0,0,.08);
-        }
-
-        .product-image {
-            height: 310px;
-            position: relative;
-            overflow: hidden;
-            background: #eee;
-        }
-
-        .product-image img {
-            height: 100%;
-            object-fit: cover;
-            transition: .5s;
-        }
-
-        .product-card:hover .product-image img {
-            transform: scale(1.04);
-        }
-
-        .badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: white;
-            padding: 7px 10px;
-            border-radius: 3px;
-            font-size: 11px;
-            font-weight: 700;
-        }
-
-        .wishlist {
-            position: absolute;
-            right: 15px;
-            top: 15px;
-            width: 36px;
-            height: 36px;
-            border: none;
-            background: white;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 17px;
-        }
-
-        .wishlist.active {
-            background: #24231f;
-            color: white;
-        }
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .product-category {
-            color: #8b867e;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .product-info h3 {
-            font-size: 16px;
-            margin: 8px 0;
-        }
-
-        .rating {
-            color: #b37c37;
-            font-size: 12px;
-            margin-bottom: 12px;
-        }
-
-        .price-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .price {
-            font-weight: 700;
-            font-size: 17px;
-        }
-
-        .old-price {
-            color: #999;
-            text-decoration: line-through;
-            font-size: 13px;
-            margin-left: 6px;
-            font-weight: 400;
-        }
-
-        .add-btn {
-            width: 38px;
-            height: 38px;
-            border: 1px solid #d6d1c9;
-            background: white;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 19px;
-            transition: .2s;
-        }
-
-        .add-btn:hover {
-            background: #24231f;
-            color: white;
-        }
-
-        /* =========================
-           ROOM BANNER
-        ========================= */
-
-        .room-banner {
-            min-height: 500px;
-            border-radius: 20px;
-            overflow: hidden;
-            background:
-                linear-gradient(90deg, rgba(26,24,20,.72), rgba(26,24,20,.15)),
-                url("https://www.stilovo.com/assets/bedroom-furniture-Blzlja84.jpg")
-                center/cover no-repeat;
-
-            display: flex;
-            align-items: center;
-        }
-
-        .room-content {
-            color: white;
-            padding: 70px;
-            max-width: 570px;
-        }
-
-        .room-content h2 {
-            font-family: "Playfair Display", serif;
-            font-size: 55px;
-            line-height: 1;
-            margin-bottom: 20px;
-        }
-
-        .room-content p {
-            line-height: 1.7;
-            color: #eee;
-            margin-bottom: 25px;
-        }
-
-        .light-btn {
-            background: white;
-            color: #24231f;
-            border: none;
-            padding: 14px 24px;
-            cursor: pointer;
-            font-weight: 700;
-            border-radius: 4px;
-        }
-
-        /* =========================
-           STORY
-        ========================= */
-
-        .story {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            min-height: 560px;
-            background: #e9e2d7;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .story-image {
-            background:
-                url("https://www.designmanitoba.com/uploads/1/9/3/8/19389557/s523593110851635129_p4862_i8_w853.png?width=640")
-                center/cover no-repeat;
-        }
-
-        .story-content {
-            padding: 70px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .story-content h2 {
-            font-family: "Playfair Display", serif;
-            font-size: 52px;
-            line-height: 1.05;
-            margin-bottom: 22px;
-        }
-
-        .story-content p {
-            color: #625e57;
-            line-height: 1.8;
-            margin-bottom: 18px;
-        }
-
-        /* =========================
-           NEWSLETTER
-        ========================= */
-
-        .newsletter {
-            background: #24231f;
-            color: white;
-            border-radius: 18px;
-            padding: 65px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-        }
-
-        .newsletter h2 {
-            font-family: "Playfair Display", serif;
-            font-size: 40px;
-            margin-bottom: 8px;
-        }
-
-        .newsletter p {
-            color: #bcb8b0;
-        }
-
-        .subscribe {
-            display: flex;
-            width: 470px;
-        }
-
-        .subscribe input {
-            flex: 1;
-            border: none;
-            padding: 16px;
-            outline: none;
-        }
-
-        .subscribe button {
-            border: none;
-            background: #98724b;
-            color: white;
-            padding: 0 25px;
-            font-weight: 700;
-            cursor: pointer;
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            margin-top: 90px;
-            background: #171613;
-            color: white;
-            padding: 70px 25px 30px;
-        }
-
-        .footer-grid {
-            max-width: 1400px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 60px;
-        }
-
-        .footer-brand h2 {
-            font-family: "Playfair Display", serif;
-            font-size: 30px;
-            margin-bottom: 15px;
-        }
-
-        .footer-brand p {
-            color: #aaa69e;
-            max-width: 350px;
-            line-height: 1.7;
-        }
-
-        .footer-column h4 {
-            margin-bottom: 18px;
-        }
-
-        .footer-column a {
-            display: block;
-            color: #aaa69e;
-            margin-bottom: 12px;
-            font-size: 14px;
-        }
-
-        .footer-column a:hover {
-            color: white;
-        }
-
-        .copyright {
-            max-width: 1400px;
-            margin: 50px auto 0;
-            padding-top: 25px;
-            border-top: 1px solid #34332f;
-            color: #77736c;
-            font-size: 13px;
-        }
-
-        /* =========================
-           CART MESSAGE
-        ========================= */
-
-        .cart-message {
-            position: fixed;
-            right: 25px;
-            bottom: 25px;
-            background: #24231f;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 8px;
-            transform: translateY(100px);
-            opacity: 0;
-            transition: .3s;
-            z-index: 2000;
-        }
-
-        .cart-message.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
-        @media(max-width:1000px) {
-
-            .nav-links {
-                display: none;
-            }
-
-            .products {
-                grid-template-columns: repeat(2,1fr);
-            }
-
-            .categories {
-                grid-template-columns: repeat(2,1fr);
-            }
-
-            .feature-grid {
-                grid-template-columns: repeat(2,1fr);
-            }
-
-            .feature:nth-child(2) {
-                border-right: none;
-            }
-
-            .feature:nth-child(-n+2) {
-                border-bottom: 1px solid #e5e1da;
-            }
-
-            .story {
-                grid-template-columns: 1fr;
-            }
-
-            .story-image {
-                min-height: 400px;
-            }
-
-            .newsletter {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .subscribe {
-                width: 100%;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media(max-width:650px) {
-
-            .nav {
-                padding: 0 18px;
-            }
-
-            .hero {
-                padding: 0 12px;
-            }
-
-            .hero-box {
-                min-height: 570px;
-            }
-
-            .hero-content {
-                padding: 35px;
-            }
-
-            .hero h1 {
-                font-size: 48px;
-            }
-
-            .section {
-                padding: 0 15px;
-            }
-
-            .products,
-            .categories {
-                grid-template-columns: 1fr;
-            }
-
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .feature {
-                border-right: none !important;
-                border-bottom: 1px solid #e5e1da;
-            }
-
-            .feature:last-child {
-                border-bottom: none;
-            }
-
-            .section-heading {
-                align-items: flex-start;
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .section-heading h2 {
-                font-size: 35px;
-            }
-
-            .room-content,
-            .story-content {
-                padding: 35px;
-            }
-
-            .room-content h2,
-            .story-content h2 {
-                font-size: 42px;
-            }
-
-            .newsletter {
-                padding: 35px;
-            }
-
-            .newsletter h2 {
-                font-size: 32px;
-            }
-
-            .subscribe {
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            .subscribe input,
-            .subscribe button {
-                min-height: 48px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 35px;
-            }
-
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MediCare+ Multi Speciality Hospital</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f9fc;
+    color:#1f2937;
+}
+
+header{
+    background:#ffffff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#0ea5e9;
+}
+
+.logo span{
+    color:#0f766e;
+}
+
+nav a{
+    text-decoration:none;
+    color:#374151;
+    margin:0 15px;
+    font-weight:500;
+}
+
+.btn{
+    background:#0ea5e9;
+    color:#fff;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.hero{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:40px;
+    padding:60px 8%;
+    background:#e0f2fe;
+}
+
+.hero h1{
+    font-size:52px;
+    line-height:1.1;
+    color:#0f172a;
+}
+
+.hero p{
+    margin:20px 0;
+    color:#475569;
+    line-height:1.7;
+}
+
+.hero img{
+    width:100%;
+    border-radius:20px;
+    height:500px;
+    object-fit:cover;
+}
+
+.emergency{
+    background:#dc2626;
+    color:#fff;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-weight:600;
+}
+
+.section{
+    padding:70px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    font-size:36px;
+    color:#0f172a;
+}
+
+.section-title p{
+    color:#64748b;
+    margin-top:10px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:24px;
+}
+
+.card{
+    background:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.card-body{
+    padding:18px;
+}
+
+.card h3{
+    margin-bottom:8px;
+    color:#0f172a;
+}
+
+.icon-box{
+    background:#fff;
+    border-radius:16px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 6px 16px rgba(0,0,0,.06);
+}
+
+.icon{
+    font-size:42px;
+    margin-bottom:12px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+}
+
+.stat{
+    background:#0ea5e9;
+    color:#fff;
+    text-align:center;
+    padding:30px;
+    border-radius:16px;
+}
+
+.stat h3{
+    font-size:36px;
+}
+
+.appointment{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+form{
+    background:#fff;
+    padding:30px;
+    border-radius:16px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+input,select,textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #d1d5db;
+    border-radius:8px;
+}
+
+footer{
+    background:#0f172a;
+    color:#cbd5e1;
+    padding:50px 8%;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+}
+
+footer h3{
+    color:#fff;
+    margin-bottom:15px;
+}
+
+footer p{
+    margin:8px 0;
+    font-size:14px;
+}
+
+@media(max-width:900px){
+
+.hero{
+    grid-template-columns:1fr;
+}
+
+.appointment{
+    grid-template-columns:1fr;
+}
+
+nav{
+    display:none;
+}
+
+.hero h1{
+    font-size:40px;
+}
+
+}
+</style>
 </head>
 
 <body>
 
-    <!-- TOP BAR -->
+<header>
+<div class="logo">Medi<span>Care+</span></div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">Doctors</a>
+<a href="#">Specialties</a>
+<a href="#">Facilities</a>
+<a href="#">Contact</a>
+</nav>
+
+<button class="btn">Book Appointment</button>
+</header>
+
+<section class="hero">
+
+<div>
+<h1>Advanced Multi Speciality Hospital</h1>
+
+<p>
+Providing world-class healthcare with experienced doctors, advanced technology,
+24×7 emergency services, ICU, diagnostics, pharmacy, and personalized patient care.
+</p>
+
+<button class="btn">Find a Doctor</button>
+</div>
+
+<img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80">
+
+</section>
+
+<div class="emergency">
+<span>🚑 24×7 Emergency & Trauma Care</span>
+<span>Emergency: +91 98765 43210</span>
+</div>
+
+<section class="section">
+
+<div class="section-title">
+<h2>Our Specialties</h2>
+<p>Comprehensive healthcare under one roof</p>
+</div>
+
+<div class="grid">
+
+<div class="icon-box">
+<div class="icon">❤️</div>
+<h3>Cardiology</h3>
+<p>Heart care & angioplasty</p>
+</div>
+
+<div class="icon-box">
+<div class="icon">🧠</div>
+<h3>Neurology</h3>
+<p>Brain & spine treatment</p>
+</div>
+
+<div class="icon-box">
+<div class="icon">🦴</div>
+<h3>Orthopedics</h3>
+<p>Bone & joint surgery</p>
+</div>
+
+<div class="icon-box">
+<div class="icon">👶</div>
+<h3>Pediatrics</h3>
+<p>Child healthcare</p>
+</div>
+
+<div class="icon-box">
+<div class="icon">🩺</div>
+<h3>General Medicine</h3>
+<p>Complete medical care</p>
+</div>
+
+<div class="icon-box">
+<div class="icon">🧬</div>
+<h3>Oncology</h3>
+<p>Cancer treatment</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" style="background:#eef8fd;">
+
+<div class="section-title">
+<h2>Meet Our Specialists</h2>
+<p>Highly qualified doctors with years of experience</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80">
+<div class="card-body">
+<h3>Dr. Sarah Johnson</h3>
+<p>Senior Cardiologist</p>
+<p>15+ Years Experience</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80">
+<div class="card-body">
+<h3>Dr. Michael Lee</h3>
+<p>Neurologist</p>
+<p>12+ Years Experience</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80">
+<div class="card-body">
+<h3>Dr. Priya Sharma</h3>
+<p>Pediatric Specialist</p>
+<p>10+ Years Experience</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80">
+<div class="card-body">
+<h3>Dr. David Wilson</h3>
+<p>Orthopedic Surgeon</p>
+<p>18+ Years Experience</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="section-title">
+<h2>Hospital Facilities</h2>
+<p>Modern infrastructure with advanced medical equipment</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=80">
+<div class="card-body">
+<h3>24×7 ICU</h3>
+<p>Advanced intensive care units with critical monitoring.</p>
+</div>
+</div>
 
-    <div class="top-bar">
-        Free delivery on orders over ₹50,000 · Easy 30-day returns
-    </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=600&q=80">
+<div class="card-body">
+<h3>Operation Theatres</h3>
+<p>Fully equipped modular surgical theatres.</p>
+</div>
+</div>
 
+<div class="card">
+<img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=600&q=80">
+<div class="card-body">
+<h3>Diagnostic Lab</h3>
+<p>CT Scan, MRI, X-Ray and pathology services.</p>
+</div>
+</div>
 
-    <!-- NAVIGATION -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1580281657527-47b74d4f9b2f?auto=format&fit=crop&w=600&q=80">
+<div class="card-body">
+<h3>24×7 Pharmacy</h3>
+<p>Round-the-clock pharmacy with genuine medicines.</p>
+</div>
+</div>
 
-    <header>
+</div>
 
-        <nav class="nav">
+</section>
 
-            <a href="#" class="logo">
-                Oak <span>&</span> Haven
-            </a>
+<section class="section" style="background:#eef8fd;">
 
-            <div class="nav-links">
-                <a href="#shop">Shop</a>
-                <a href="#collections">Collections</a>
-                <a href="#rooms">Rooms</a>
-                <a href="#about">Our Story</a>
-                <a href="#contact">Contact</a>
-            </div>
+<div class="section-title">
+<h2>Why Choose MediCare+</h2>
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h3>250+</h3>
+<p>Expert Doctors</p>
+</div>
 
-            <div class="nav-actions">
+<div class="stat">
+<h3>500</h3>
+<p>Hospital Beds</p>
+</div>
 
-                <button class="icon-btn" onclick="focusSearch()">
-                    ⌕
-                </button>
+<div class="stat">
+<h3>35+</h3>
+<p>Medical Departments</p>
+</div>
 
-                <button class="icon-btn">
-                    ♡
-                </button>
+<div class="stat">
+<h3>24×7</h3>
+<p>Emergency Services</p>
+</div>
 
-                <button class="icon-btn" onclick="scrollToCart()">
-                    🛒
-                    <span class="cart-count" id="cartCount">0</span>
-                </button>
+</div>
 
-            </div>
+</section>
 
-        </nav>
+<section class="section">
 
-    </header>
+<div class="section-title">
+<h2>Book an Appointment</h2>
+<p>Consult our specialists with ease</p>
+</div>
 
+<div class="appointment">
 
-    <!-- HERO -->
+<img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=800&q=80" style="border-radius:18px; height:100%; object-fit:cover;">
 
-    <main>
+<form>
 
-        <section class="hero">
+<h3 style="margin-bottom:15px;">Appointment Form</h3>
 
-            <div class="hero-box">
+<input type="text" placeholder="Full Name">
 
-                <div class="hero-content">
+<input type="email" placeholder="Email Address">
 
-                    <div class="eyebrow">
-                        Furniture for modern living
-                    </div>
+<input type="tel" placeholder="Phone Number">
 
-                    <h1>
-                        Make room for better living.
-                    </h1>
+<select>
+<option>Select Department</option>
+<option>Cardiology</option>
+<option>Neurology</option>
+<option>Orthopedics</option>
+<option>Pediatrics</option>
+<option>General Medicine</option>
+</select>
 
-                    <p>
-                        Thoughtfully designed furniture made for beautiful,
-                        comfortable and timeless spaces.
-                    </p>
+<input type="date">
 
-                    <button class="primary-btn"
-                            onclick="document.getElementById('shop').scrollIntoView()">
-                        Shop New Arrivals
-                    </button>
+<textarea rows="4" placeholder="Describe your concern"></textarea>
 
-                </div>
+<button class="btn" style="width:100%; margin-top:10px;">Confirm Appointment</button>
 
-            </div>
+</form>
 
-        </section>
+</div>
 
+</section>
 
-        <!-- FEATURES -->
+<footer>
 
-        <section class="features">
+<div class="footer-grid">
 
-            <div class="feature-grid">
+<div>
+<h3>MediCare+</h3>
+<p>Leading multi-speciality hospital delivering compassionate healthcare with advanced medical technology.</p>
+</div>
 
-                <div class="feature">
-                    <strong>Premium Materials</strong>
-                    <span>Built with carefully selected materials.</span>
-                </div>
+<div>
+<h3>Departments</h3>
+<p>Cardiology</p>
+<p>Neurology</p>
+<p>Orthopedics</p>
+<p>Oncology</p>
+</div>
 
-                <div class="feature">
-                    <strong>Free Delivery</strong>
-                    <span>Complimentary delivery on large orders.</span>
-                </div>
+<div>
+<h3>Services</h3>
+<p>Emergency</p>
+<p>ICU</p>
+<p>Diagnostics</p>
+<p>Pharmacy</p>
+</div>
 
-                <div class="feature">
-                    <strong>30-Day Returns</strong>
-                    <span>Take your time deciding what fits.</span>
-                </div>
+<div>
+<h3>Contact</h3>
+<p>📍 Hyderabad, India</p>
+<p>☎ +91 98765 43210</p>
+<p>✉ info@medicareplus.com</p>
+</div>
 
-                <div class="feature">
-                    <strong>5-Year Warranty</strong>
-                    <span>Furniture designed for everyday life.</span>
-                </div>
+</div>
 
-            </div>
+<div style="text-align:center; margin-top:40px; border-top:1px solid #334155; padding-top:20px;">
+© 2026 MediCare+ Multi Speciality Hospital. All Rights Reserved.
+</div>
 
-        </section>
-
-
-        <!-- COLLECTIONS -->
-
-        <section class="section" id="collections">
-
-            <div class="section-heading">
-
-                <div>
-                    <h2>Shop by category</h2>
-                    <p>Everything you need to build your perfect home.</p>
-                </div>
-
-                <a href="#shop" class="view-all">
-                    View all
-                </a>
-
-            </div>
-
-
-            <div class="categories">
-
-                <div class="category" onclick="filterProducts('Sofas')">
-
-                    <img src="https://myhome.hu/contentimages/3312-1584/makeup/testfiles/import/attachments/nicoline/mynina/kepek/nausicaa-3_olasz-kanap%C3%A9.jpg?v=1488186254">
-
-                    <div class="category-overlay">
-                        <div>
-                            <h3>Sofas</h3>
-                            <span>24 products</span>
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div class="category" onclick="filterProducts('Bedroom')">
-
-                    <img src="https://www.stilovo.com/assets/bedroom-furniture-Blzlja84.jpg">
-
-                    <div class="category-overlay">
-                        <div>
-                            <h3>Bedroom</h3>
-                            <span>32 products</span>
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div class="category" onclick="filterProducts('Dining')">
-
-                    <img src="https://ensomobili.ro/images/dining%20table%20.jpg">
-
-                    <div class="category-overlay">
-                        <div>
-                            <h3>Dining</h3>
-                            <span>18 products</span>
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div class="category" onclick="filterProducts('Tables')">
-
-                    <img src="https://artisan.ba/_next/image?q=75&url=https%3A%2F%2Fartisan-production.ams3.cdn.digitaloceanspaces.com%2Flakri_table_neva_light_chair_gallery1_beb3e00abe.jpg&w=3840">
-
-                    <div class="category-overlay">
-                        <div>
-                            <h3>Tables</h3>
-                            <span>27 products</span>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- PRODUCTS -->
-
-        <section class="section" id="shop">
-
-            <div class="section-heading">
-
-                <div>
-                    <h2>New arrivals</h2>
-                    <p>Fresh designs for your next interior.</p>
-                </div>
-
-                <a href="#" class="view-all">
-                    Explore collection
-                </a>
-
-            </div>
-
-
-            <div class="filter-row">
-
-                <button class="filter active" onclick="filterProducts('All', this)">
-                    All
-                </button>
-
-                <button class="filter" onclick="filterProducts('Sofas', this)">
-                    Sofas
-                </button>
-
-                <button class="filter" onclick="filterProducts('Chairs', this)">
-                    Chairs
-                </button>
-
-                <button class="filter" onclick="filterProducts('Tables', this)">
-                    Tables
-                </button>
-
-                <button class="filter" onclick="filterProducts('Bedroom', this)">
-                    Bedroom
-                </button>
-
-            </div>
-
-
-            <div class="products" id="productGrid">
-
-                <!-- PRODUCT 1 -->
-
-                <article class="product-card" data-category="Sofas">
-
-                    <div class="product-image">
-
-                        <img src="https://www.designmanitoba.com/uploads/1/9/3/8/19389557/s523593110851635129_p4862_i8_w853.png?width=640">
-
-                        <span class="badge">NEW</span>
-
-                        <button class="wishlist"
-                                onclick="toggleWishlist(this)">
-                            ♡
-                        </button>
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <span class="product-category">
-                            Living Room
-                        </span>
-
-                        <h3>Marlow Curved Sofa</h3>
-
-                        <div class="rating">
-                            ★★★★★ <span>(42)</span>
-                        </div>
-
-                        <div class="price-row">
-
-                            <div class="price">
-                                ₹68,900
-                                <span class="old-price">₹76,500</span>
-                            </div>
-
-                            <button class="add-btn"
-                                    onclick="addToCart('Marlow Curved Sofa')">
-                                +
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PRODUCT 2 -->
-
-                <article class="product-card" data-category="Chairs">
-
-                    <div class="product-image">
-
-                        <img src="https://horizon.zenit-demos.com/media/04/99/85/1752578508/wooden-table-chair-1-1.webp?ts=1752578508">
-
-                        <span class="badge">BESTSELLER</span>
-
-                        <button class="wishlist"
-                                onclick="toggleWishlist(this)">
-                            ♡
-                        </button>
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <span class="product-category">
-                            Seating
-                        </span>
-
-                        <h3>Arden Oak Lounge Chair</h3>
-
-                        <div class="rating">
-                            ★★★★★ <span>(31)</span>
-                        </div>
-
-                        <div class="price-row">
-
-                            <div class="price">
-                                ₹24,900
-                            </div>
-
-                            <button class="add-btn"
-                                    onclick="addToCart('Arden Oak Lounge Chair')">
-                                +
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PRODUCT 3 -->
-
-                <article class="product-card" data-category="Dining">
-
-                    <div class="product-image">
-
-                        <img src="https://www.molido.com.tw/images/372356">
-
-                        <span class="badge">NEW</span>
-
-                        <button class="wishlist"
-                                onclick="toggleWishlist(this)">
-                            ♡
-                        </button>
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <span class="product-category">
-                            Dining
-                        </span>
-
-                        <h3>Elara Dining Collection</h3>
-
-                        <div class="rating">
-                            ★★★★★ <span>(18)</span>
-                        </div>
-
-                        <div class="price-row">
-
-                            <div class="price">
-                                ₹54,500
-                            </div>
-
-                            <button class="add-btn"
-                                    onclick="addToCart('Elara Dining Collection')">
-                                +
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PRODUCT 4 -->
-
-                <article class="product-card" data-category="Bedroom">
-
-                    <div class="product-image">
-
-                        <img src="https://themobcollective.com/cdn/shop/files/1ov70gSNLFGFsXqoOdevKbl5dwUe-xTcC_76124b86-97d1-45e1-9a4d-4591f5d03f40.jpg?v=1780518713">
-
-                        <span class="badge">20% OFF</span>
-
-                        <button class="wishlist"
-                                onclick="toggleWishlist(this)">
-                            ♡
-                        </button>
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <span class="product-category">
-                            Bedroom
-                        </span>
-
-                        <h3>Haven Upholstered Bed</h3>
-
-                        <div class="rating">
-                            ★★★★★ <span>(57)</span>
-                        </div>
-
-                        <div class="price-row">
-
-                            <div class="price">
-                                ₹72,900
-                                <span class="old-price">₹91,000</span>
-                            </div>
-
-                            <button class="add-btn"
-                                    onclick="addToCart('Haven Upholstered Bed')">
-                                +
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PRODUCT 5 -->
-
-                <article class="product-card" data-category="Tables">
-
-                    <div class="product-image">
-
-                        <img src="https://artisan.ba/_next/image?q=75&url=https%3A%2F%2Fartisan-production.ams3.cdn.digitaloceanspaces.com%2Flakri_table_neva_light_chair_gallery1_beb3e00abe.jpg&w=3840">
-
-                        <button class="wishlist"
-                                onclick="toggleWishlist(this)">
-                            ♡
-                        </button>
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <span class="product-category">
-                            Dining
-                        </span>
-
-                        <h3>Lakri Solid Wood Table</h3>
-
-                        <div class="rating">
-                            ★★★★★ <span>(26)</span>
-                        </div>
-
-                        <div class="price-row">
-
-                            <div class="price">
-                                ₹41,900
-                            </div>
-
-                            <button class="add-btn"
-                                    onclick="addToCart('Lakri Solid Wood Table')">
-                                +
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PRODUCT 6 -->
-
-                <article class="product-card" data-category="Sofas">
-
-                    <div class="product-image">
-
-                        <img src="https://image.hnsmall.com/images/goods/066/25813066_ag.jpg">
-
-                        <button class="wishlist"
-                                onclick="toggleWishlist(this)">
-                            ♡
-                        </button>
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <span class="product-category">
-                            Living Room
-                        </span>
-
-                        <h3>Cloud Modular Sectional</h3>
-
-                        <div class="rating">
-                            ★★★★★ <span>(64)</span>
-                        </div>
-
-                        <div class="price-row">
-
-                            <div class="price">
-                                ₹89,900
-                            </div>
-
-                            <button class="add-btn"
-                                    onclick="addToCart('Cloud Modular Sectional')">
-                                +
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PRODUCT 7 -->
-
-                <article class="product-card" data-category="Bedroom">
-
-                    <div class="product-image">
-
-                        <img src="https://www.reboncabinets.com/uploads/202012911/n202004211147097683980.jpg">
-
-                        <button class="wishlist"
-                                onclick="toggleWishlist(this)">
-                            ♡
-                        </button>
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <span class="product-category">
-                            Bedroom
-                        </span>
-
-                        <h3>Linea Platform Bed</h3>
-
-                        <div class="rating">
-                            ★★★★★ <span>(37)</span>
-                        </div>
-
-                        <div class="price-row">
-
-                            <div class="price">
-                                ₹59,900
-                            </div>
-
-                            <button class="add-btn"
-                                    onclick="addToCart('Linea Platform Bed')">
-                                +
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PRODUCT 8 -->
-
-                <article class="product-card" data-category="Chairs">
-
-                    <div class="product-image">
-
-                        <img src="https://d31dpzy4bseog7.cloudfront.net/media/2022/01/17123848/Nathan-Day-Design-Profile-Feature-The-Local-Project-Image-02.jpeg">
-
-                        <span class="badge">LIMITED</span>
-
-                        <button class="wishlist"
-                                onclick="toggleWishlist(this)">
-                            ♡
-                        </button>
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <span class="product-category">
-                            Seating
-                        </span>
-
-                        <h3>Oakline Dining Chair</h3>
-
-                        <div class="rating">
-                            ★★★★★ <span>(22)</span>
-                        </div>
-
-                        <div class="price-row">
-
-                            <div class="price">
-                                ₹12,900
-                            </div>
-
-                            <button class="add-btn"
-                                    onclick="addToCart('Oakline Dining Chair')">
-                                +
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- BEDROOM BANNER -->
-
-        <section class="section" id="rooms">
-
-            <div class="room-banner">
-
-                <div class="room-content">
-
-                    <div class="eyebrow">
-                        The bedroom edit
-                    </div>
-
-                    <h2>
-                        A quieter place to come home to.
-                    </h2>
-
-                    <p>
-                        Discover upholstered beds, natural wood nightstands
-                        and thoughtful storage designed around rest.
-                    </p>
-
-                    <button class="light-btn"
-                            onclick="filterProducts('Bedroom')">
-                        Explore Bedroom
-                    </button>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- OUR STORY -->
-
-        <section class="section" id="about">
-
-            <div class="story">
-
-                <div class="story-image"></div>
-
-                <div class="story-content">
-
-                    <div class="eyebrow">
-                        Our philosophy
-                    </div>
-
-                    <h2>
-                        Furniture should age beautifully.
-                    </h2>
-
-                    <p>
-                        At Oak & Haven, we believe good furniture should not
-                        simply fill a room. It should become part of your life.
-                    </p>
-
-                    <p>
-                        We combine natural materials, thoughtful proportions
-                        and timeless forms to create pieces that remain useful
-                        and beautiful for years.
-                    </p>
-
-                    <button class="primary-btn">
-                        Discover Our Story
-                    </button>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- NEWSLETTER -->
-
-        <section class="section" id="contact">
-
-            <div class="newsletter">
-
-                <div>
-
-                    <h2>
-                        Design inspiration, delivered.
-                    </h2>
-
-                    <p>
-                        Get new collections, interior ideas and private offers.
-                    </p>
-
-                </div>
-
-                <div class="subscribe">
-
-                    <input
-                        type="email"
-                        placeholder="Your email address"
-                        id="email"
-                    >
-
-                    <button onclick="subscribe()">
-                        Subscribe
-                    </button>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <div class="footer-grid">
-
-            <div class="footer-brand">
-
-                <h2>Oak & Haven</h2>
-
-                <p>
-                    Modern furniture designed for comfortable,
-                    considered living.
-                </p>
-
-            </div>
-
-            <div class="footer-column">
-
-                <h4>Shop</h4>
-
-                <a href="#shop">New Arrivals</a>
-                <a href="#shop">Sofas</a>
-                <a href="#shop">Bedroom</a>
-                <a href="#shop">Dining</a>
-
-            </div>
-
-            <div class="footer-column">
-
-                <h4>Help</h4>
-
-                <a href="#">Delivery</a>
-                <a href="#">Returns</a>
-                <a href="#">Warranty</a>
-                <a href="#">Contact Us</a>
-
-            </div>
-
-            <div class="footer-column">
-
-                <h4>Company</h4>
-
-                <a href="#about">Our Story</a>
-                <a href="#">Journal</a>
-                <a href="#">Careers</a>
-                <a href="#">Stores</a>
-
-            </div>
-
-        </div>
-
-        <div class="copyright">
-            © 2026 Oak & Haven. All rights reserved.
-        </div>
-
-    </footer>
-
-
-    <!-- CART NOTIFICATION -->
-
-    <div class="cart-message" id="cartMessage">
-        Product added to your cart.
-    </div>
-
-
-    <script>
-
-        let cartCount = 0;
-
-
-        /* =========================
-           ADD TO CART
-        ========================= */
-
-        function addToCart(productName) {
-
-            cartCount++;
-
-            document.getElementById("cartCount").textContent = cartCount;
-
-            const message = document.getElementById("cartMessage");
-
-            message.textContent = productName + " added to your cart.";
-
-            message.classList.add("show");
-
-            setTimeout(() => {
-                message.classList.remove("show");
-            }, 2200);
-        }
-
-
-        /* =========================
-           WISHLIST
-        ========================= */
-
-        function toggleWishlist(button) {
-
-            button.classList.toggle("active");
-
-            if (button.classList.contains("active")) {
-                button.textContent = "♥";
-            } else {
-                button.textContent = "♡";
-            }
-        }
-
-
-        /* =========================
-           FILTER PRODUCTS
-        ========================= */
-
-        function filterProducts(category, clickedButton) {
-
-            const products =
-                document.querySelectorAll(".product-card");
-
-            products.forEach(product => {
-
-                if (
-                    category === "All" ||
-                    product.dataset.category === category
-                ) {
-                    product.style.display = "block";
-                } else {
-                    product.style.display = "none";
-                }
-
-            });
-
-            if (clickedButton) {
-
-                document.querySelectorAll(".filter")
-                    .forEach(btn => btn.classList.remove("active"));
-
-                clickedButton.classList.add("active");
-
-            }
-
-            document.getElementById("shop")
-                .scrollIntoView({
-                    behavior: "smooth"
-                });
-        }
-
-
-        /* =========================
-           SEARCH
-        ========================= */
-
-        function focusSearch() {
-
-            const search = prompt(
-                "What furniture are you looking for?"
-            );
-
-            if (!search) return;
-
-            const products =
-                document.querySelectorAll(".product-card");
-
-            products.forEach(product => {
-
-                const text =
-                    product.innerText.toLowerCase();
-
-                product.style.display =
-                    text.includes(search.toLowerCase())
-                        ? "block"
-                        : "none";
-
-            });
-
-            document.getElementById("shop")
-                .scrollIntoView({
-                    behavior: "smooth"
-                });
-        }
-
-
-        /* =========================
-           CART
-        ========================= */
-
-        function scrollToCart() {
-
-            if (cartCount === 0) {
-
-                alert("Your cart is currently empty.");
-
-            } else {
-
-                alert(
-                    "You have " +
-                    cartCount +
-                    " item(s) in your cart."
-                );
-
-            }
-        }
-
-
-        /* =========================
-           NEWSLETTER
-        ========================= */
-
-        function subscribe() {
-
-            const email =
-                document.getElementById("email").value;
-
-            if (!email || !email.includes("@")) {
-
-                alert("Please enter a valid email address.");
-
-                return;
-            }
-
-            alert(
-                "Thank you. You are now subscribed to Oak & Haven."
-            );
-
-            document.getElementById("email").value = "";
-        }
-
-    </script>
+</footer>
 
 </body>
 </html>
