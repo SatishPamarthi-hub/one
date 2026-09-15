@@ -1,2126 +1,1810 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Virasat | Indian Idols & Antiques</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-/* =====================================================
-   GLOBAL
-===================================================== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    background:#f7f3ed;
-    color:#29251f;
-    font-family:"Inter",sans-serif;
-}
-
-img{
-    width:100%;
-    display:block;
-}
-
-button{
-    font-family:inherit;
-    cursor:pointer;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-/* =====================================================
-   TOP ANNOUNCEMENT
-===================================================== */
-
-.topbar{
-    background:#211c17;
-    color:#e8d8bd;
-    text-align:center;
-    padding:9px 15px;
-    font-size:11px;
-    letter-spacing:1.4px;
-    text-transform:uppercase;
-}
-
-/* =====================================================
-   HEADER
-===================================================== */
-
-.header{
-    height:82px;
-    background:#fbf9f5;
-    border-bottom:1px solid #ded7cb;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:0 6%;
-
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
-
-.logo{
-    font-family:"Cormorant Garamond",serif;
-    font-size:34px;
-    font-weight:700;
-    color:#8a5a25;
-}
-
-.logo small{
-    display:block;
-    font-family:"Inter",sans-serif;
-    font-size:7px;
-    letter-spacing:3px;
-    color:#777;
-    text-align:center;
-    margin-top:-7px;
-}
-
-.navigation{
-    display:flex;
-    gap:30px;
-    font-size:13px;
-    font-weight:500;
-}
-
-.navigation a{
-    transition:.2s;
-}
-
-.navigation a:hover{
-    color:#a26b2b;
-}
-
-.header-actions{
-    display:flex;
-    align-items:center;
-    gap:19px;
-}
-
-.header-action{
-    font-size:19px;
-    cursor:pointer;
-    position:relative;
-}
-
-.cart-count{
-    position:absolute;
-    right:-8px;
-    top:-8px;
-
-    width:17px;
-    height:17px;
-
-    background:#9b6328;
-    color:#fff;
-
-    font-size:9px;
-
-    border-radius:50%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.hero{
-    min-height:650px;
-    position:relative;
-    overflow:hidden;
-}
-
-.hero-image{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.hero-overlay{
-    position:absolute;
-    inset:0;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(27,22,17,.92) 0%,
-            rgba(27,22,17,.72) 36%,
-            rgba(27,22,17,.25) 70%,
-            rgba(27,22,17,.08) 100%
-        );
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-
-    width:88%;
-    max-width:1250px;
-
-    margin:auto;
-
-    padding-top:155px;
-
-    color:#fff;
-}
-
-.hero-kicker{
-    color:#dcb77e;
-
-    text-transform:uppercase;
-
-    letter-spacing:3px;
-
-    font-size:12px;
-
-    margin-bottom:18px;
-}
-
-.hero h1{
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:76px;
-
-    line-height:.95;
-
-    font-weight:600;
-
-    max-width:650px;
-}
-
-.hero h1 span{
-    color:#d5a660;
-}
-
-.hero-description{
-    max-width:520px;
-
-    color:#dedbd6;
-
-    line-height:1.8;
-
-    font-size:15px;
-
-    margin:28px 0 34px;
-}
-
-.hero-buttons{
-    display:flex;
-    gap:12px;
-}
-
-.gold-button{
-    background:#b77b35;
-    color:white;
-
-    border:none;
-
-    padding:14px 28px;
-
-    font-size:13px;
-    font-weight:600;
-
-    transition:.25s;
-}
-
-.gold-button:hover{
-    background:#956127;
-}
-
-.outline-button{
-    background:transparent;
-
-    color:white;
-
-    border:1px solid rgba(255,255,255,.6);
-
-    padding:14px 28px;
-
-    font-size:13px;
-}
-
-.hero-stat{
-    position:absolute;
-    right:6%;
-    bottom:45px;
-
-    z-index:3;
-
-    color:#fff;
-
-    text-align:right;
-}
-
-.hero-stat strong{
-    display:block;
-
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:30px;
-}
-
-.hero-stat span{
-    font-size:10px;
-    letter-spacing:2px;
-    color:#d4d0c8;
-}
-
-/* =====================================================
-   TRUST BAR
-===================================================== */
-
-.trust-bar{
-    background:#2b241c;
-
-    color:#eee;
-
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-
-    padding:25px 7%;
-}
-
-.trust-item{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    gap:13px;
-
-    border-right:1px solid #51483c;
-}
-
-.trust-item:last-child{
-    border:none;
-}
-
-.trust-icon{
-    color:#d1a15d;
-    font-size:21px;
-}
-
-.trust-item strong{
-    display:block;
-    font-size:12px;
-}
-
-.trust-item span{
-    color:#aaa;
-    font-size:10px;
-}
-
-/* =====================================================
-   SECTION
-===================================================== */
-
-.section{
-    width:88%;
-    max-width:1250px;
-    margin:85px auto;
-}
-
-.section-heading{
-    display:flex;
-    justify-content:space-between;
-    align-items:end;
-
-    margin-bottom:30px;
-}
-
-.heading-label{
-    text-transform:uppercase;
-
-    letter-spacing:2px;
-
-    color:#a16a2d;
-
-    font-size:10px;
-
-    margin-bottom:6px;
-}
-
-.section-title{
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:47px;
-
-    color:#33281d;
-
-    line-height:1;
-}
-
-.section-description{
-    color:#777;
-
-    font-size:13px;
-
-    margin-top:9px;
-}
-
-.view-link{
-    color:#956127;
-
-    font-size:12px;
-
-    font-weight:600;
-}
-
-/* =====================================================
-   COLLECTION CATEGORIES
-===================================================== */
-
-.collections{
-    display:grid;
-
-    grid-template-columns:
-        1.5fr
-        1fr
-        1fr;
-
-    grid-template-rows:260px 260px;
-
-    gap:15px;
-}
-
-.collection{
-    position:relative;
-    overflow:hidden;
-
-    cursor:pointer;
-}
-
-.collection:first-child{
-    grid-row:span 2;
-}
-
-.collection img{
-    height:100%;
-    object-fit:cover;
-
-    transition:.6s;
-}
-
-.collection:hover img{
-    transform:scale(1.06);
-}
-
-.collection-overlay{
-    position:absolute;
-    inset:0;
-
-    background:
-        linear-gradient(
-            transparent 35%,
-            rgba(0,0,0,.75)
-        );
-
-    display:flex;
-    align-items:end;
-
-    padding:28px;
-}
-
-.collection-text{
-    color:white;
-}
-
-.collection-text small{
-    color:#d8b77e;
-
-    text-transform:uppercase;
-
-    letter-spacing:2px;
-
-    font-size:9px;
-}
-
-.collection-text h3{
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:32px;
-
-    margin-top:4px;
-}
-
-/* =====================================================
-   PRODUCTS
-===================================================== */
-
-.product-grid{
-    display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:20px;
-}
-
-.product-card{
-    background:#fff;
-
-    border:1px solid #e5dfd5;
-
-    transition:.3s;
-
-    position:relative;
-}
-
-.product-card:hover{
-    transform:translateY(-5px);
-
-    box-shadow:
-        0 18px 35px
-        rgba(59,42,24,.10);
-}
-
-.product-image{
-    height:320px;
-
-    background:#eee8de;
-
-    overflow:hidden;
-
-    position:relative;
-}
-
-.product-image img{
-    height:100%;
-
-    object-fit:cover;
-
-    transition:.5s;
-}
-
-.product-card:hover .product-image img{
-    transform:scale(1.04);
-}
-
-.badge{
-    position:absolute;
-
-    top:13px;
-    left:13px;
-
-    background:#2c241c;
-
-    color:#fff;
-
-    padding:6px 10px;
-
-    font-size:9px;
-
-    letter-spacing:1px;
-
-    text-transform:uppercase;
-
-    z-index:2;
-}
-
-.wishlist{
-    position:absolute;
-
-    top:12px;
-    right:12px;
-
-    width:34px;
-    height:34px;
-
-    background:#fff;
-
-    border-radius:50%;
-
-    display:flex;
-
-    justify-content:center;
-    align-items:center;
-
-    z-index:2;
-
-    border:none;
-
-    font-size:17px;
-}
-
-.product-details{
-    padding:18px;
-}
-
-.product-category{
-    color:#a16a2d;
-
-    text-transform:uppercase;
-
-    letter-spacing:1.5px;
-
-    font-size:9px;
-}
-
-.product-name{
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:24px;
-
-    margin:5px 0;
-
-    color:#342a21;
-}
-
-.product-description{
-    color:#888;
-
-    font-size:11px;
-
-    line-height:1.5;
-}
-
-.product-bottom{
-    margin-top:14px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-}
-
-.price{
-    font-weight:700;
-
-    color:#382b20;
-
-    font-size:16px;
-}
-
-.old-price{
-    color:#999;
-
-    text-decoration:line-through;
-
-    font-size:11px;
-
-    margin-left:5px;
-}
-
-.add-cart{
-    border:none;
-
-    background:#8d5d29;
-
-    color:white;
-
-    padding:9px 13px;
-
-    font-size:10px;
-
-    font-weight:600;
-}
-
-.add-cart:hover{
-    background:#68431e;
-}
-
-/* =====================================================
-   HERITAGE FEATURE
-===================================================== */
-
-.heritage{
-    background:#e9e0d3;
-
-    padding:90px 6%;
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:70px;
-
-    align-items:center;
-}
-
-.heritage-image{
-    height:520px;
-
-    overflow:hidden;
-}
-
-.heritage-image img{
-    height:100%;
-
-    object-fit:cover;
-}
-
-.heritage-content{
-    max-width:530px;
-}
-
-.heritage-content .heading-label{
-    margin-bottom:10px;
-}
-
-.heritage-content h2{
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:58px;
-
-    line-height:.98;
-
-    color:#34281d;
-
-    margin-bottom:22px;
-}
-
-.heritage-content p{
-    color:#665e55;
-
-    line-height:1.9;
-
-    font-size:14px;
-
-    margin-bottom:25px;
-}
-
-.feature-list{
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:15px;
-
-    margin-bottom:30px;
-}
-
-.feature-list div{
-    border-top:1px solid #cfc3b2;
-
-    padding-top:12px;
-
-    font-size:12px;
-
-    color:#51473c;
-}
-
-/* =====================================================
-   ANTIQUE COLLECTION
-===================================================== */
-
-.antique-section{
-    background:#24201b;
-
-    padding:90px 6%;
-
-    color:#fff;
-}
-
-.antique-inner{
-    width:88%;
-    max-width:1250px;
-
-    margin:auto;
-}
-
-.antique-section .section-title{
-    color:#fff;
-}
-
-.antique-section .section-description{
-    color:#aaa;
-}
-
-.antique-grid{
-    display:grid;
-
-    grid-template-columns:
-        1fr 1fr 1fr;
-
-    gap:18px;
-}
-
-.antique-card{
-    position:relative;
-
-    height:400px;
-
-    overflow:hidden;
-}
-
-.antique-card img{
-    height:100%;
-
-    object-fit:cover;
-
-    opacity:.86;
-
-    transition:.5s;
-}
-
-.antique-card:hover img{
-    transform:scale(1.06);
-
-    opacity:1;
-}
-
-.antique-overlay{
-    position:absolute;
-
-    inset:0;
-
-    display:flex;
-
-    align-items:end;
-
-    padding:25px;
-
-    background:
-        linear-gradient(
-            transparent 40%,
-            rgba(0,0,0,.8)
-        );
-}
-
-.antique-overlay h3{
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:31px;
-}
-
-.antique-overlay p{
-    color:#c9c0b5;
-
-    font-size:11px;
-
-    margin-top:4px;
-}
-
-/* =====================================================
-   TESTIMONIAL
-===================================================== */
-
-.testimonial{
-    text-align:center;
-
-    max-width:760px;
-
-    margin:100px auto;
-}
-
-.quote-mark{
-    font-family:"Cormorant Garamond",serif;
-
-    color:#b47b39;
-
-    font-size:70px;
-
-    line-height:.5;
-}
-
-.testimonial blockquote{
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:34px;
-
-    line-height:1.3;
-
-    color:#3b3026;
-
-    margin:20px 0;
-}
-
-.testimonial span{
-    color:#8b8177;
-
-    font-size:11px;
-
-    text-transform:uppercase;
-
-    letter-spacing:2px;
-}
-
-/* =====================================================
-   NEWSLETTER
-===================================================== */
-
-.newsletter{
-    background:#d6c4aa;
-
-    text-align:center;
-
-    padding:65px 20px;
-}
-
-.newsletter h2{
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:46px;
-
-    color:#34281d;
-}
-
-.newsletter p{
-    color:#685e51;
-
-    font-size:13px;
-
-    margin:8px 0 25px;
-}
-
-.newsletter-form{
-    max-width:480px;
-
-    margin:auto;
-
-    display:flex;
-}
-
-.newsletter-form input{
-    flex:1;
-
-    border:none;
-
-    padding:14px;
-
-    outline:none;
-
-    background:#f8f5ef;
-}
-
-.newsletter-form button{
-    border:none;
-
-    background:#3b3025;
-
-    color:white;
-
-    padding:0 24px;
-
-    font-size:12px;
-
-    font-weight:600;
-}
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-.footer{
-    background:#1f1b17;
-
-    color:#fff;
-
-    padding:60px 7% 25px;
-}
-
-.footer-grid{
-    display:grid;
-
-    grid-template-columns:
-        2fr 1fr 1fr 1fr;
-
-    gap:50px;
-}
-
-.footer-logo{
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:34px;
-
-    color:#d0a25e;
-}
-
-.footer-about{
-    max-width:350px;
-
-    color:#999;
-
-    font-size:12px;
-
-    line-height:1.8;
-
-    margin-top:12px;
-}
-
-.footer h4{
-    color:#e6d2b4;
-
-    font-size:12px;
-
-    margin-bottom:17px;
-
-    text-transform:uppercase;
-
-    letter-spacing:1px;
-}
-
-.footer ul{
-    list-style:none;
-}
-
-.footer li{
-    color:#999;
-
-    font-size:12px;
-
-    margin:10px 0;
-}
-
-.footer li:hover{
-    color:#fff;
-}
-
-.copyright{
-    border-top:1px solid #3c3731;
-
-    margin-top:45px;
-
-    padding-top:20px;
-
-    color:#777;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    font-size:10px;
-}
-
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-
-@media(max-width:1000px){
-
-    .navigation{
-        display:none;
-    }
-
-    .hero h1{
-        font-size:60px;
-    }
-
-    .product-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .collections{
-        grid-template-columns:1fr 1fr;
-        grid-template-rows:260px 260px 260px;
-    }
-
-    .collection:first-child{
-        grid-row:span 2;
-    }
-
-    .heritage{
-        grid-template-columns:1fr;
-    }
-
-    .heritage-image{
-        height:400px;
-    }
-
-    .antique-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-}
-
-@media(max-width:650px){
-
-    .header{
-        padding:0 20px;
-    }
-
-    .navigation{
-        display:none;
-    }
-
-    .hero{
-        min-height:600px;
-    }
-
-    .hero-content{
-        padding-top:120px;
-    }
-
-    .hero h1{
-        font-size:47px;
-    }
-
-    .hero-stat{
-        display:none;
-    }
-
-    .hero-buttons{
-        flex-direction:column;
-
-        width:190px;
-    }
-
-    .trust-bar{
-        grid-template-columns:1fr 1fr;
-        gap:20px;
-    }
-
-    .trust-item{
-        border:none;
-    }
-
-    .section{
-        width:90%;
-    }
-
-    .section-title{
-        font-size:39px;
-    }
-
-    .section-heading{
-        align-items:start;
-    }
-
-    .collections{
-        display:grid;
-        grid-template-columns:1fr;
-        grid-template-rows:300px;
-    }
-
-    .collection:first-child{
-        grid-row:auto;
-    }
-
-    .collections .collection{
-        height:260px;
-    }
-
-    .product-grid{
-        grid-template-columns:1fr;
-    }
-
-    .product-image{
-        height:390px;
-    }
-
-    .heritage{
-        padding:60px 5%;
-    }
-
-    .heritage-content h2{
-        font-size:45px;
-    }
-
-    .feature-list{
-        grid-template-columns:1fr;
-    }
-
-    .antique-grid{
-        grid-template-columns:1fr;
-    }
-
-    .antique-card{
-        height:400px;
-    }
-
-    .newsletter-form{
-        flex-direction:column;
-        gap:8px;
-    }
-
-    .newsletter-form input{
-        padding:15px;
-    }
-
-    .newsletter-form button{
-        padding:15px;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr;
-    }
-
-    .copyright{
-        flex-direction:column;
-        gap:10px;
-    }
-
-}
-
-</style>
-</head>
-
-
-<body>
-
-
-<!-- TOP BAR -->
-
-<div class="topbar">
-    Complimentary shipping across India on orders above ₹2,500
-</div>
-
-
-<!-- HEADER -->
-
-<header class="header">
-
-    <a href="#" class="logo">
-        Virasat
-        <small>INDIAN ART • IDOLS • ANTIQUES</small>
-    </a>
-
-    <nav class="navigation">
-        <a href="#">Home</a>
-        <a href="#collections">Collections</a>
-        <a href="#idols">Idols</a>
-        <a href="#antiques">Antiques</a>
-        <a href="#">New Arrivals</a>
-        <a href="#">Our Story</a>
-    </nav>
-
-    <div class="header-actions">
-
-        <div class="header-action">
-            ⌕
-        </div>
-
-        <div class="header-action">
-            ♡
-        </div>
-
-        <div class="header-action">
-            ♙
-        </div>
-
-        <div class="header-action cart">
-            🛒
-            <span class="cart-count">0</span>
-        </div>
-
-    </div>
-
-</header>
-
-
-<!-- HERO -->
-
-<section class="hero">
-
-    <img
-        class="hero-image"
-        src="https://www.buddha-art.com/wp-content/uploads/2023/08/Brass-Ganesha-Statue.jpg"
-        alt="Traditional Indian brass Ganesha sculpture"
-    >
-
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content">
-
-        <div class="hero-kicker">
-            Timeless Indian craftsmanship
-        </div>
-
-        <h1>
-            Bring home a piece of
-            <span>heritage.</span>
-        </h1>
-
-        <p class="hero-description">
-            Discover handcrafted idols, antique-inspired sculptures,
-            traditional art and timeless collectibles created by
-            skilled Indian artisans.
-        </p>
-
-        <div class="hero-buttons">
-
-            <button class="gold-button">
-                Explore Collection
-            </button>
-
-            <button class="outline-button">
-                View New Arrivals
-            </button>
-
-        </div>
-
-    </div>
-
-    <div class="hero-stat">
-        <strong>25+ Years</strong>
-        <span>CRAFTSMANSHIP & HERITAGE</span>
-    </div>
-
-</section>
-
-
-<!-- TRUST -->
-
-<section class="trust-bar">
-
-    <div class="trust-item">
-
-        <div class="trust-icon">◆</div>
-
-        <div>
-            <strong>Handcrafted</strong>
-            <span>Made by Indian artisans</span>
-        </div>
-
-    </div>
-
-
-    <div class="trust-item">
-
-        <div class="trust-icon">◇</div>
-
-        <div>
-            <strong>Authentic Materials</strong>
-            <span>Brass, bronze & wood</span>
-        </div>
-
-    </div>
-
-
-    <div class="trust-item">
-
-        <div class="trust-icon">◈</div>
-
-        <div>
-            <strong>Secure Packaging</strong>
-            <span>Carefully packed for delivery</span>
-        </div>
-
-    </div>
-
-
-    <div class="trust-item">
-
-        <div class="trust-icon">✦</div>
-
-        <div>
-            <strong>Pan-India Delivery</strong>
-            <span>Delivered to your doorstep</span>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- COLLECTIONS -->
-
-<section class="section" id="collections">
-
-    <div class="section-heading">
-
-        <div>
-
-            <div class="heading-label">
-                Explore the collection
-            </div>
-
-            <h2 class="section-title">
-                Discover your heritage
-            </h2>
-
-            <p class="section-description">
-                Traditional forms, refined craftsmanship and timeless character.
-            </p>
-
-        </div>
-
-        <a href="#" class="view-link">
-            View all collections →
-        </a>
-
-    </div>
-
-
-    <div class="collections">
-
-
-        <div class="collection">
-
-            <img
-                src="https://www.buddha-art.com/wp-content/uploads/2023/08/Brass-Ganesha-Statue.jpg"
-                alt="Brass deity sculpture"
-            >
-
-            <div class="collection-overlay">
-
-                <div class="collection-text">
-
-                    <small>Divine craftsmanship</small>
-
-                    <h3>
-                        Sacred Idols
-                    </h3>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="collection">
-
-            <img
-                src="https://www.statuestudio.com/cdn/shop/products/brass-ganesha-idol-sitting-on-mouse-antique-finish-10-inch-1.jpg"
-                alt="Antique brass Ganesha"
-            >
-
-            <div class="collection-overlay">
-
-                <div class="collection-text">
-
-                    <small>Traditional</small>
-
-                    <h3>
-                        Brass Art
-                    </h3>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="collection">
-
-            <img
-                src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=1000&q=90"
-                alt="Indian decorative art"
-            >
-
-            <div class="collection-overlay">
-
-                <div class="collection-text">
-
-                    <small>Decorative</small>
-
-                    <h3>
-                        Vintage Decor
-                    </h3>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="collection">
-
-            <img
-                src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=1000&q=90"
-                alt="Traditional artwork"
-            >
-
-            <div class="collection-overlay">
-
-                <div class="collection-text">
-
-                    <small>Fine art</small>
-
-                    <h3>
-                        Heritage Art
-                    </h3>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="collection">
-
-            <img
-                src="https://images.unsplash.com/photo-1609766857041-ed402ea8069a?auto=format&fit=crop&w=1000&q=90"
-                alt="Decorative sculpture"
-            >
-
-            <div class="collection-overlay">
-
-                <div class="collection-text">
-
-                    <small>Collectibles</small>
-
-                    <h3>
-                        Rare Finds
-                    </h3>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- PRODUCTS -->
-
-<section class="section" id="idols">
-
-    <div class="section-heading">
-
-        <div>
-
-            <div class="heading-label">
-                Curated for you
-            </div>
-
-            <h2 class="section-title">
-                Signature Idols
-            </h2>
-
-            <p class="section-description">
-                Handcrafted pieces designed for homes, temples and collectors.
-            </p>
-
-        </div>
-
-        <a href="#" class="view-link">
-            Shop all idols →
-        </a>
-
-    </div>
-
-
-    <div class="product-grid">
-
-
-        <!-- PRODUCT 1 -->
-
-        <article class="product-card">
-
-            <div class="product-image">
-
-                <span class="badge">
-                    Bestseller
-                </span>
-
-                <button class="wishlist">
-                    ♡
-                </button>
-
-                <img
-                    src="https://www.statuestudio.com/cdn/shop/products/brass-ganesha-idol-sitting-on-mouse-antique-finish-10-inch-1.jpg"
-                    alt="Antique brass Ganesha idol"
-                >
-
-            </div>
-
-            <div class="product-details">
-
-                <div class="product-category">
-                    Brass Idols
-                </div>
-
-                <h3 class="product-name">
-                    Seated Ganesha
-                </h3>
-
-                <p class="product-description">
-                    Handcrafted solid brass idol with an antique finish.
-                </p>
-
-                <div class="product-bottom">
-
-                    <div class="price">
-                        ₹13,500
-                    </div>
-
-                    <button class="add-cart">
-                        Add to Cart
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUCT 2 -->
-
-        <article class="product-card">
-
-            <div class="product-image">
-
-                <span class="badge">
-                    New
-                </span>
-
-                <button class="wishlist">
-                    ♡
-                </button>
-
-                <img
-                    src="https://budhshiv.com/cdn/shop/files/IMG_9450.jpg"
-                    alt="Antique gold Ganesha idol"
-                >
-
-            </div>
-
-            <div class="product-details">
-
-                <div class="product-category">
-                    Fine Brass
-                </div>
-
-                <h3 class="product-name">
-                    Antique Gold Ganesha
-                </h3>
-
-                <p class="product-description">
-                    Detailed brass sculpture with a rich antique-gold finish.
-                </p>
-
-                <div class="product-bottom">
-
-                    <div class="price">
-                        ₹8,392
-                    </div>
-
-                    <button class="add-cart">
-                        Add to Cart
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUCT 3 -->
-
-        <article class="product-card">
-
-            <div class="product-image">
-
-                <span class="badge">
-                    Handcrafted
-                </span>
-
-                <button class="wishlist">
-                    ♡
-                </button>
-
-                <img
-                    src="https://www.raniartsandteak.co.in/cdn/shop/files/ganesha-with-prabhavali.jpg"
-                    alt="Ganesha with Prabhavali"
-                >
-
-            </div>
-
-            <div class="product-details">
-
-                <div class="product-category">
-                    Temple Art
-                </div>
-
-                <h3 class="product-name">
-                    Ganesha Prabhavali
-                </h3>
-
-                <p class="product-description">
-                    Traditional brass sculpture framed by an ornate Prabhavali.
-                </p>
-
-                <div class="product-bottom">
-
-                    <div class="price">
-                        ₹10,800
-                    </div>
-
-                    <button class="add-cart">
-                        Add to Cart
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUCT 4 -->
-
-        <article class="product-card">
-
-            <div class="product-image">
-
-                <span class="badge">
-                    Collector's Pick
-                </span>
-
-                <button class="wishlist">
-                    ♡
-                </button>
-
-                <img
-                    src="https://shobitam.in/cdn/shop/files/BRASS_PRABHAVALI_GANESHA_IDOL.jpg"
-                    alt="Large brass Prabhavali Ganesha"
-                >
-
-            </div>
-
-            <div class="product-details">
-
-                <div class="product-category">
-                    Collector Series
-                </div>
-
-                <h3 class="product-name">
-                    Grand Prabhavali
-                </h3>
-
-                <p class="product-description">
-                    Statement brass sculpture inspired by traditional temple art.
-                </p>
-
-                <div class="product-bottom">
-
-                    <div class="price">
-                        ₹1,18,200
-                    </div>
-
-                    <button class="add-cart">
-                        Add to Cart
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- HERITAGE STORY -->
-
-<section class="heritage">
-
-    <div class="heritage-image">
-
-        <img
-            src="https://images.unsplash.com/photo-1609766857041-ed402ea8069a?auto=format&fit=crop&w=1200&q=90"
-            alt="Indian artisan craftsmanship"
-        >
-
-    </div>
-
-
-    <div class="heritage-content">
-
-        <div class="heading-label">
-            Our philosophy
-        </div>
-
-        <h2>
-            Objects with a story worth keeping.
-        </h2>
-
-        <p>
-            Virasat brings together traditional Indian craftsmanship and
-            contemporary collecting. Every piece is selected for its
-            character, material, detailing and ability to become part
-            of a home for generations.
-        </p>
-
-        <div class="feature-list">
-
-            <div>
-                <strong>01</strong><br>
-                Artisan Crafted
-            </div>
-
-            <div>
-                <strong>02</strong><br>
-                Heritage Inspired
-            </div>
-
-            <div>
-                <strong>03</strong><br>
-                Quality Materials
-            </div>
-
-            <div>
-                <strong>04</strong><br>
-                Collector Friendly
-            </div>
-
-        </div>
-
-        <button class="gold-button">
-            Discover Virasat
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- ANTIQUES -->
-
-<section class="antique-section" id="antiques">
-
-    <div class="antique-inner">
-
-        <div class="section-heading">
-
-            <div>
-
-                <div class="heading-label">
-                    For collectors
-                </div>
-
-                <h2 class="section-title">
-                    The Antique Edit
-                </h2>
-
-                <p class="section-description">
-                    Character-rich pieces inspired by India's artistic heritage.
-                </p>
-
-            </div>
-
-            <a href="#" class="view-link">
-                Explore antiques →
-            </a>
-
-        </div>
-
-
-        <div class="antique-grid">
-
-
-            <div class="antique-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1564399579883-451a5d44ec08?auto=format&fit=crop&w=1000&q=90"
-                    alt="Vintage antique sculpture"
-                >
-
-                <div class="antique-overlay">
-
-                    <div>
-
-                        <h3>
-                            Temple Collectibles
-                        </h3>
-
-                        <p>
-                            Inspired by centuries-old craftsmanship
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="antique-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=1000&q=90"
-                    alt="Traditional Indian artwork"
-                >
-
-                <div class="antique-overlay">
-
-                    <div>
-
-                        <h3>
-                            Vintage Art
-                        </h3>
-
-                        <p>
-                            Traditional art for refined interiors
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="antique-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=1000&q=90"
-                    alt="Decorative antique object"
-                >
-
-                <div class="antique-overlay">
-
-                    <div>
-
-                        <h3>
-                            Rare Objects
-                        </h3>
-
-                        <p>
-                            Distinctive pieces for serious collectors
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- TESTIMONIAL -->
-
-<section class="testimonial">
-
-    <div class="quote-mark">
-        “
-    </div>
-
-    <blockquote>
-        "A beautiful object does more than decorate a room.
-        It carries a piece of history into the future."
-    </blockquote>
-
-    <span>
-        The Virasat Collection
-    </span>
-
-</section>
-
-
-<!-- NEWSLETTER -->
-
-<section class="newsletter">
-
-    <h2>
-        Enter the world of Virasat.
-    </h2>
-
-    <p>
-        New collections, rare finds and stories from Indian craftsmanship.
-    </p>
-
-    <form class="newsletter-form">
-
-        <input
-            type="email"
-            placeholder="Your email address"
-        >
-
-        <button>
-            Subscribe
-        </button>
-
-    </form>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer class="footer">
-
-    <div class="footer-grid">
-
-
-        <div>
-
-            <div class="footer-logo">
-                Virasat
-            </div>
-
-            <p class="footer-about">
-                A curated destination for Indian idols,
-                handcrafted sculptures, heritage art and
-                collectible objects.
-            </p>
-
-        </div>
-
-
-        <div>
-
-            <h4>Shop</h4>
-
-            <ul>
-                <li>Brass Idols</li>
-                <li>Bronze Sculptures</li>
-                <li>Wooden Art</li>
-                <li>Antique Decor</li>
-                <li>Collectibles</li>
-            </ul>
-
-        </div>
-
-
-        <div>
-
-            <h4>Information</h4>
-
-            <ul>
-                <li>About Virasat</li>
-                <li>Artisan Stories</li>
-                <li>Shipping</li>
-                <li>Returns</li>
-                <li>Care Guide</li>
-            </ul>
-
-        </div>
-
-
-        <div>
-
-            <h4>Customer Care</h4>
-
-            <ul>
-                <li>Contact Us</li>
-                <li>Track Order</li>
-                <li>FAQ</li>
-                <li>WhatsApp Support</li>
-                <li>Bulk Enquiries</li>
-            </ul>
-
-        </div>
-
-    </div>
-
-
-    <div class="copyright">
-
-        <span>
-            © 2026 Virasat. All rights reserved.
-        </span>
-
-        <span>
-            Indian Art • Heritage • Craftsmanship
-        </span>
-
-    </div>
-
-</footer>
-
-
-<script>
-
-/* =========================
-   CART
-========================= */
-
-let cartCount = 0;
-
-const cartCounter =
-    document.querySelector(".cart-count");
-
-document.querySelectorAll(".add-cart").forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        cartCount++;
-
-        cartCounter.textContent = cartCount;
-
-        const originalText = button.textContent;
-
-        button.textContent = "Added ✓";
-
-        setTimeout(() => {
-
-            button.textContent = originalText;
-
-        },1200);
-
-    });
-
-});
-
-
-/* =========================
-   WISHLIST
-========================= */
-
-document.querySelectorAll(".wishlist").forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        if(button.textContent.trim() === "♡"){
-
-            button.textContent = "♥";
-            button.style.color = "#a15e27";
-
-        }else{
-
-            button.textContent = "♡";
-            button.style.color = "#29251f";
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Oak & Haven | Modern Furniture</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background: #f7f5f1;
+            color: #24231f;
+        }
+
+        button,
+        input {
+            font-family: inherit;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* =========================
+           TOP BAR
+        ========================= */
+
+        .top-bar {
+            background: #24231f;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 13px;
+            letter-spacing: .3px;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        header {
+            background: rgba(247,245,241,.96);
+            border-bottom: 1px solid #ddd8cf;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(15px);
+        }
+
+        .nav {
+            max-width: 1400px;
+            margin: auto;
+            height: 78px;
+            padding: 0 35px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            font-family: "Playfair Display", serif;
+            font-size: 27px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: #98724b;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .nav-links a {
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+            width: 0;
+            height: 1px;
+            background: #98724b;
+            transition: .3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .icon-btn {
+            border: 1px solid #d9d4ca;
+            background: white;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 17px;
+            position: relative;
+            transition: .2s;
+        }
+
+        .icon-btn:hover {
+            background: #24231f;
+            color: white;
+        }
+
+        .cart-count {
+            position: absolute;
+            right: -2px;
+            top: -4px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #98724b;
+            color: white;
+            font-size: 10px;
+            display: grid;
+            place-items: center;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            max-width: 1400px;
+            margin: 25px auto 0;
+            padding: 0 25px;
+        }
+
+        .hero-box {
+            min-height: 620px;
+            border-radius: 22px;
+            overflow: hidden;
+            position: relative;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(22,20,17,.75) 0%,
+                    rgba(22,20,17,.38) 45%,
+                    rgba(22,20,17,.05) 80%
+                ),
+                url("https://www.matsuzakaya.co.jp/nagoya/topics/3/lux/main/RenewalOpen/assets/img/floor7/if_01_01.jpg")
+                center/cover no-repeat;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            padding: 70px;
+            color: white;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 3px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(48px, 6vw, 82px);
+            line-height: .98;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #eee;
+            max-width: 510px;
+            margin-bottom: 32px;
+        }
+
+        .primary-btn {
+            background: #98724b;
+            color: white;
+            border: none;
+            padding: 15px 27px;
+            border-radius: 4px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .25s;
+        }
+
+        .primary-btn:hover {
+            background: #765536;
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           FEATURES
+        ========================= */
+
+        .features {
+            max-width: 1400px;
+            margin: 30px auto 70px;
+            padding: 0 25px;
+        }
+
+        .feature-grid {
+            background: white;
+            border: 1px solid #e3dfd7;
+            border-radius: 14px;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+        }
+
+        .feature {
+            padding: 28px;
+            border-right: 1px solid #e5e1da;
+        }
+
+        .feature:last-child {
+            border-right: none;
+        }
+
+        .feature strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        .feature span {
+            color: #77736b;
+            font-size: 13px;
+        }
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        .section {
+            max-width: 1400px;
+            margin: 0 auto 90px;
+            padding: 0 25px;
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 30px;
+        }
+
+        .section-heading h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 42px;
+        }
+
+        .section-heading p {
+            color: #77736b;
+            margin-top: 8px;
+        }
+
+        .view-all {
+            font-weight: 700;
+            border-bottom: 1px solid #24231f;
+            padding-bottom: 4px;
+        }
+
+        /* =========================
+           CATEGORIES
+        ========================= */
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 18px;
+        }
+
+        .category {
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .category img {
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .category:hover img {
+            transform: scale(1.05);
+        }
+
+        .category-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: end;
+            padding: 25px;
+            background: linear-gradient(transparent, rgba(0,0,0,.68));
+            color: white;
+        }
+
+        .category-overlay h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 28px;
+        }
+
+        .category-overlay span {
+            font-size: 12px;
+            opacity: .8;
+        }
+
+        /* =========================
+           PRODUCTS
+        ========================= */
+
+        .filter-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+        }
+
+        .filter {
+            border: 1px solid #d8d3ca;
+            background: white;
+            padding: 10px 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        .filter.active,
+        .filter:hover {
+            background: #24231f;
+            color: white;
+            border-color: #24231f;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #e5e0d8;
+            transition: .3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 40px rgba(0,0,0,.08);
+        }
+
+        .product-image {
+            height: 310px;
+            position: relative;
+            overflow: hidden;
+            background: #eee;
+        }
+
+        .product-image img {
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.04);
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: white;
+            padding: 7px 10px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .wishlist {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            width: 36px;
+            height: 36px;
+            border: none;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+        .wishlist.active {
+            background: #24231f;
+            color: white;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-category {
+            color: #8b867e;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-info h3 {
+            font-size: 16px;
+            margin: 8px 0;
+        }
+
+        .rating {
+            color: #b37c37;
+            font-size: 12px;
+            margin-bottom: 12px;
+        }
+
+        .price-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .price {
+            font-weight: 700;
+            font-size: 17px;
+        }
+
+        .old-price {
+            color: #999;
+            text-decoration: line-through;
+            font-size: 13px;
+            margin-left: 6px;
+            font-weight: 400;
+        }
+
+        .add-btn {
+            width: 38px;
+            height: 38px;
+            border: 1px solid #d6d1c9;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 19px;
+            transition: .2s;
+        }
+
+        .add-btn:hover {
+            background: #24231f;
+            color: white;
+        }
+
+        /* =========================
+           ROOM BANNER
+        ========================= */
+
+        .room-banner {
+            min-height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            background:
+                linear-gradient(90deg, rgba(26,24,20,.72), rgba(26,24,20,.15)),
+                url("https://www.stilovo.com/assets/bedroom-furniture-Blzlja84.jpg")
+                center/cover no-repeat;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .room-content {
+            color: white;
+            padding: 70px;
+            max-width: 570px;
+        }
+
+        .room-content h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 55px;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .room-content p {
+            line-height: 1.7;
+            color: #eee;
+            margin-bottom: 25px;
+        }
+
+        .light-btn {
+            background: white;
+            color: #24231f;
+            border: none;
+            padding: 14px 24px;
+            cursor: pointer;
+            font-weight: 700;
+            border-radius: 4px;
+        }
+
+        /* =========================
+           STORY
+        ========================= */
+
+        .story {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 560px;
+            background: #e9e2d7;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .story-image {
+            background:
+                url("https://www.designmanitoba.com/uploads/1/9/3/8/19389557/s523593110851635129_p4862_i8_w853.png?width=640")
+                center/cover no-repeat;
+        }
+
+        .story-content {
+            padding: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .story-content h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 52px;
+            line-height: 1.05;
+            margin-bottom: 22px;
+        }
+
+        .story-content p {
+            color: #625e57;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        /* =========================
+           NEWSLETTER
+        ========================= */
+
+        .newsletter {
+            background: #24231f;
+            color: white;
+            border-radius: 18px;
+            padding: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .newsletter h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 40px;
+            margin-bottom: 8px;
+        }
+
+        .newsletter p {
+            color: #bcb8b0;
+        }
+
+        .subscribe {
+            display: flex;
+            width: 470px;
+        }
+
+        .subscribe input {
+            flex: 1;
+            border: none;
+            padding: 16px;
+            outline: none;
+        }
+
+        .subscribe button {
+            border: none;
+            background: #98724b;
+            color: white;
+            padding: 0 25px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            margin-top: 90px;
+            background: #171613;
+            color: white;
+            padding: 70px 25px 30px;
+        }
+
+        .footer-grid {
+            max-width: 1400px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+        }
+
+        .footer-brand h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+            color: #aaa69e;
+            max-width: 350px;
+            line-height: 1.7;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 18px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #aaa69e;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .copyright {
+            max-width: 1400px;
+            margin: 50px auto 0;
+            padding-top: 25px;
+            border-top: 1px solid #34332f;
+            color: #77736c;
+            font-size: 13px;
+        }
+
+        /* =========================
+           CART MESSAGE
+        ========================= */
+
+        .cart-message {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            background: #24231f;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: .3s;
+            z-index: 2000;
+        }
+
+        .cart-message.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width:1000px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .products {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .categories {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .feature-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .feature:nth-child(2) {
+                border-right: none;
+            }
+
+            .feature:nth-child(-n+2) {
+                border-bottom: 1px solid #e5e1da;
+            }
+
+            .story {
+                grid-template-columns: 1fr;
+            }
+
+            .story-image {
+                min-height: 400px;
+            }
+
+            .newsletter {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .subscribe {
+                width: 100%;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media(max-width:650px) {
+
+            .nav {
+                padding: 0 18px;
+            }
+
+            .hero {
+                padding: 0 12px;
+            }
+
+            .hero-box {
+                min-height: 570px;
+            }
+
+            .hero-content {
+                padding: 35px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .section {
+                padding: 0 15px;
+            }
+
+            .products,
+            .categories {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature {
+                border-right: none !important;
+                border-bottom: 1px solid #e5e1da;
+            }
+
+            .feature:last-child {
+                border-bottom: none;
+            }
+
+            .section-heading {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .section-heading h2 {
+                font-size: 35px;
+            }
+
+            .room-content,
+            .story-content {
+                padding: 35px;
+            }
+
+            .room-content h2,
+            .story-content h2 {
+                font-size: 42px;
+            }
+
+            .newsletter {
+                padding: 35px;
+            }
+
+            .newsletter h2 {
+                font-size: 32px;
+            }
+
+            .subscribe {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .subscribe input,
+            .subscribe button {
+                min-height: 48px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
 
         }
 
-    });
+    </style>
+</head>
 
-});
+<body>
+
+    <!-- TOP BAR -->
+
+    <div class="top-bar">
+        Free delivery on orders over ₹50,000 · Easy 30-day returns
+    </div>
 
 
-/* =========================
-   SEARCH ICON
-========================= */
+    <!-- NAVIGATION -->
 
-document
-    .querySelector(".header-action")
-    .addEventListener("click", () => {
+    <header>
 
-        alert("Search functionality can be connected here.");
+        <nav class="nav">
 
-    });
+            <a href="#" class="logo">
+                Oak <span>&</span> Haven
+            </a>
 
-</script>
+            <div class="nav-links">
+                <a href="#shop">Shop</a>
+                <a href="#collections">Collections</a>
+                <a href="#rooms">Rooms</a>
+                <a href="#about">Our Story</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+
+                <button class="icon-btn" onclick="focusSearch()">
+                    ⌕
+                </button>
+
+                <button class="icon-btn">
+                    ♡
+                </button>
+
+                <button class="icon-btn" onclick="scrollToCart()">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-box">
+
+                <div class="hero-content">
+
+                    <div class="eyebrow">
+                        Furniture for modern living
+                    </div>
+
+                    <h1>
+                        Make room for better living.
+                    </h1>
+
+                    <p>
+                        Thoughtfully designed furniture made for beautiful,
+                        comfortable and timeless spaces.
+                    </p>
+
+                    <button class="primary-btn"
+                            onclick="document.getElementById('shop').scrollIntoView()">
+                        Shop New Arrivals
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURES -->
+
+        <section class="features">
+
+            <div class="feature-grid">
+
+                <div class="feature">
+                    <strong>Premium Materials</strong>
+                    <span>Built with carefully selected materials.</span>
+                </div>
+
+                <div class="feature">
+                    <strong>Free Delivery</strong>
+                    <span>Complimentary delivery on large orders.</span>
+                </div>
+
+                <div class="feature">
+                    <strong>30-Day Returns</strong>
+                    <span>Take your time deciding what fits.</span>
+                </div>
+
+                <div class="feature">
+                    <strong>5-Year Warranty</strong>
+                    <span>Furniture designed for everyday life.</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- COLLECTIONS -->
+
+        <section class="section" id="collections">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Shop by category</h2>
+                    <p>Everything you need to build your perfect home.</p>
+                </div>
+
+                <a href="#shop" class="view-all">
+                    View all
+                </a>
+
+            </div>
+
+
+            <div class="categories">
+
+                <div class="category" onclick="filterProducts('Sofas')">
+
+                    <img src="https://myhome.hu/contentimages/3312-1584/makeup/testfiles/import/attachments/nicoline/mynina/kepek/nausicaa-3_olasz-kanap%C3%A9.jpg?v=1488186254">
+
+                    <div class="category-overlay">
+                        <div>
+                            <h3>Sofas</h3>
+                            <span>24 products</span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="category" onclick="filterProducts('Bedroom')">
+
+                    <img src="https://www.stilovo.com/assets/bedroom-furniture-Blzlja84.jpg">
+
+                    <div class="category-overlay">
+                        <div>
+                            <h3>Bedroom</h3>
+                            <span>32 products</span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="category" onclick="filterProducts('Dining')">
+
+                    <img src="https://ensomobili.ro/images/dining%20table%20.jpg">
+
+                    <div class="category-overlay">
+                        <div>
+                            <h3>Dining</h3>
+                            <span>18 products</span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="category" onclick="filterProducts('Tables')">
+
+                    <img src="https://artisan.ba/_next/image?q=75&url=https%3A%2F%2Fartisan-production.ams3.cdn.digitaloceanspaces.com%2Flakri_table_neva_light_chair_gallery1_beb3e00abe.jpg&w=3840">
+
+                    <div class="category-overlay">
+                        <div>
+                            <h3>Tables</h3>
+                            <span>27 products</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRODUCTS -->
+
+        <section class="section" id="shop">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>New arrivals</h2>
+                    <p>Fresh designs for your next interior.</p>
+                </div>
+
+                <a href="#" class="view-all">
+                    Explore collection
+                </a>
+
+            </div>
+
+
+            <div class="filter-row">
+
+                <button class="filter active" onclick="filterProducts('All', this)">
+                    All
+                </button>
+
+                <button class="filter" onclick="filterProducts('Sofas', this)">
+                    Sofas
+                </button>
+
+                <button class="filter" onclick="filterProducts('Chairs', this)">
+                    Chairs
+                </button>
+
+                <button class="filter" onclick="filterProducts('Tables', this)">
+                    Tables
+                </button>
+
+                <button class="filter" onclick="filterProducts('Bedroom', this)">
+                    Bedroom
+                </button>
+
+            </div>
+
+
+            <div class="products" id="productGrid">
+
+                <!-- PRODUCT 1 -->
+
+                <article class="product-card" data-category="Sofas">
+
+                    <div class="product-image">
+
+                        <img src="https://www.designmanitoba.com/uploads/1/9/3/8/19389557/s523593110851635129_p4862_i8_w853.png?width=640">
+
+                        <span class="badge">NEW</span>
+
+                        <button class="wishlist"
+                                onclick="toggleWishlist(this)">
+                            ♡
+                        </button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            Living Room
+                        </span>
+
+                        <h3>Marlow Curved Sofa</h3>
+
+                        <div class="rating">
+                            ★★★★★ <span>(42)</span>
+                        </div>
+
+                        <div class="price-row">
+
+                            <div class="price">
+                                ₹68,900
+                                <span class="old-price">₹76,500</span>
+                            </div>
+
+                            <button class="add-btn"
+                                    onclick="addToCart('Marlow Curved Sofa')">
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 2 -->
+
+                <article class="product-card" data-category="Chairs">
+
+                    <div class="product-image">
+
+                        <img src="https://horizon.zenit-demos.com/media/04/99/85/1752578508/wooden-table-chair-1-1.webp?ts=1752578508">
+
+                        <span class="badge">BESTSELLER</span>
+
+                        <button class="wishlist"
+                                onclick="toggleWishlist(this)">
+                            ♡
+                        </button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            Seating
+                        </span>
+
+                        <h3>Arden Oak Lounge Chair</h3>
+
+                        <div class="rating">
+                            ★★★★★ <span>(31)</span>
+                        </div>
+
+                        <div class="price-row">
+
+                            <div class="price">
+                                ₹24,900
+                            </div>
+
+                            <button class="add-btn"
+                                    onclick="addToCart('Arden Oak Lounge Chair')">
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 3 -->
+
+                <article class="product-card" data-category="Dining">
+
+                    <div class="product-image">
+
+                        <img src="https://www.molido.com.tw/images/372356">
+
+                        <span class="badge">NEW</span>
+
+                        <button class="wishlist"
+                                onclick="toggleWishlist(this)">
+                            ♡
+                        </button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            Dining
+                        </span>
+
+                        <h3>Elara Dining Collection</h3>
+
+                        <div class="rating">
+                            ★★★★★ <span>(18)</span>
+                        </div>
+
+                        <div class="price-row">
+
+                            <div class="price">
+                                ₹54,500
+                            </div>
+
+                            <button class="add-btn"
+                                    onclick="addToCart('Elara Dining Collection')">
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 4 -->
+
+                <article class="product-card" data-category="Bedroom">
+
+                    <div class="product-image">
+
+                        <img src="https://themobcollective.com/cdn/shop/files/1ov70gSNLFGFsXqoOdevKbl5dwUe-xTcC_76124b86-97d1-45e1-9a4d-4591f5d03f40.jpg?v=1780518713">
+
+                        <span class="badge">20% OFF</span>
+
+                        <button class="wishlist"
+                                onclick="toggleWishlist(this)">
+                            ♡
+                        </button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            Bedroom
+                        </span>
+
+                        <h3>Haven Upholstered Bed</h3>
+
+                        <div class="rating">
+                            ★★★★★ <span>(57)</span>
+                        </div>
+
+                        <div class="price-row">
+
+                            <div class="price">
+                                ₹72,900
+                                <span class="old-price">₹91,000</span>
+                            </div>
+
+                            <button class="add-btn"
+                                    onclick="addToCart('Haven Upholstered Bed')">
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 5 -->
+
+                <article class="product-card" data-category="Tables">
+
+                    <div class="product-image">
+
+                        <img src="https://artisan.ba/_next/image?q=75&url=https%3A%2F%2Fartisan-production.ams3.cdn.digitaloceanspaces.com%2Flakri_table_neva_light_chair_gallery1_beb3e00abe.jpg&w=3840">
+
+                        <button class="wishlist"
+                                onclick="toggleWishlist(this)">
+                            ♡
+                        </button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            Dining
+                        </span>
+
+                        <h3>Lakri Solid Wood Table</h3>
+
+                        <div class="rating">
+                            ★★★★★ <span>(26)</span>
+                        </div>
+
+                        <div class="price-row">
+
+                            <div class="price">
+                                ₹41,900
+                            </div>
+
+                            <button class="add-btn"
+                                    onclick="addToCart('Lakri Solid Wood Table')">
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 6 -->
+
+                <article class="product-card" data-category="Sofas">
+
+                    <div class="product-image">
+
+                        <img src="https://image.hnsmall.com/images/goods/066/25813066_ag.jpg">
+
+                        <button class="wishlist"
+                                onclick="toggleWishlist(this)">
+                            ♡
+                        </button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            Living Room
+                        </span>
+
+                        <h3>Cloud Modular Sectional</h3>
+
+                        <div class="rating">
+                            ★★★★★ <span>(64)</span>
+                        </div>
+
+                        <div class="price-row">
+
+                            <div class="price">
+                                ₹89,900
+                            </div>
+
+                            <button class="add-btn"
+                                    onclick="addToCart('Cloud Modular Sectional')">
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 7 -->
+
+                <article class="product-card" data-category="Bedroom">
+
+                    <div class="product-image">
+
+                        <img src="https://www.reboncabinets.com/uploads/202012911/n202004211147097683980.jpg">
+
+                        <button class="wishlist"
+                                onclick="toggleWishlist(this)">
+                            ♡
+                        </button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            Bedroom
+                        </span>
+
+                        <h3>Linea Platform Bed</h3>
+
+                        <div class="rating">
+                            ★★★★★ <span>(37)</span>
+                        </div>
+
+                        <div class="price-row">
+
+                            <div class="price">
+                                ₹59,900
+                            </div>
+
+                            <button class="add-btn"
+                                    onclick="addToCart('Linea Platform Bed')">
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 8 -->
+
+                <article class="product-card" data-category="Chairs">
+
+                    <div class="product-image">
+
+                        <img src="https://d31dpzy4bseog7.cloudfront.net/media/2022/01/17123848/Nathan-Day-Design-Profile-Feature-The-Local-Project-Image-02.jpeg">
+
+                        <span class="badge">LIMITED</span>
+
+                        <button class="wishlist"
+                                onclick="toggleWishlist(this)">
+                            ♡
+                        </button>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            Seating
+                        </span>
+
+                        <h3>Oakline Dining Chair</h3>
+
+                        <div class="rating">
+                            ★★★★★ <span>(22)</span>
+                        </div>
+
+                        <div class="price-row">
+
+                            <div class="price">
+                                ₹12,900
+                            </div>
+
+                            <button class="add-btn"
+                                    onclick="addToCart('Oakline Dining Chair')">
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- BEDROOM BANNER -->
+
+        <section class="section" id="rooms">
+
+            <div class="room-banner">
+
+                <div class="room-content">
+
+                    <div class="eyebrow">
+                        The bedroom edit
+                    </div>
+
+                    <h2>
+                        A quieter place to come home to.
+                    </h2>
+
+                    <p>
+                        Discover upholstered beds, natural wood nightstands
+                        and thoughtful storage designed around rest.
+                    </p>
+
+                    <button class="light-btn"
+                            onclick="filterProducts('Bedroom')">
+                        Explore Bedroom
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- OUR STORY -->
+
+        <section class="section" id="about">
+
+            <div class="story">
+
+                <div class="story-image"></div>
+
+                <div class="story-content">
+
+                    <div class="eyebrow">
+                        Our philosophy
+                    </div>
+
+                    <h2>
+                        Furniture should age beautifully.
+                    </h2>
+
+                    <p>
+                        At Oak & Haven, we believe good furniture should not
+                        simply fill a room. It should become part of your life.
+                    </p>
+
+                    <p>
+                        We combine natural materials, thoughtful proportions
+                        and timeless forms to create pieces that remain useful
+                        and beautiful for years.
+                    </p>
+
+                    <button class="primary-btn">
+                        Discover Our Story
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- NEWSLETTER -->
+
+        <section class="section" id="contact">
+
+            <div class="newsletter">
+
+                <div>
+
+                    <h2>
+                        Design inspiration, delivered.
+                    </h2>
+
+                    <p>
+                        Get new collections, interior ideas and private offers.
+                    </p>
+
+                </div>
+
+                <div class="subscribe">
+
+                    <input
+                        type="email"
+                        placeholder="Your email address"
+                        id="email"
+                    >
+
+                    <button onclick="subscribe()">
+                        Subscribe
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+
+                <h2>Oak & Haven</h2>
+
+                <p>
+                    Modern furniture designed for comfortable,
+                    considered living.
+                </p>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h4>Shop</h4>
+
+                <a href="#shop">New Arrivals</a>
+                <a href="#shop">Sofas</a>
+                <a href="#shop">Bedroom</a>
+                <a href="#shop">Dining</a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h4>Help</h4>
+
+                <a href="#">Delivery</a>
+                <a href="#">Returns</a>
+                <a href="#">Warranty</a>
+                <a href="#">Contact Us</a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h4>Company</h4>
+
+                <a href="#about">Our Story</a>
+                <a href="#">Journal</a>
+                <a href="#">Careers</a>
+                <a href="#">Stores</a>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 Oak & Haven. All rights reserved.
+        </div>
+
+    </footer>
+
+
+    <!-- CART NOTIFICATION -->
+
+    <div class="cart-message" id="cartMessage">
+        Product added to your cart.
+    </div>
+
+
+    <script>
+
+        let cartCount = 0;
+
+
+        /* =========================
+           ADD TO CART
+        ========================= */
+
+        function addToCart(productName) {
+
+            cartCount++;
+
+            document.getElementById("cartCount").textContent = cartCount;
+
+            const message = document.getElementById("cartMessage");
+
+            message.textContent = productName + " added to your cart.";
+
+            message.classList.add("show");
+
+            setTimeout(() => {
+                message.classList.remove("show");
+            }, 2200);
+        }
+
+
+        /* =========================
+           WISHLIST
+        ========================= */
+
+        function toggleWishlist(button) {
+
+            button.classList.toggle("active");
+
+            if (button.classList.contains("active")) {
+                button.textContent = "♥";
+            } else {
+                button.textContent = "♡";
+            }
+        }
+
+
+        /* =========================
+           FILTER PRODUCTS
+        ========================= */
+
+        function filterProducts(category, clickedButton) {
+
+            const products =
+                document.querySelectorAll(".product-card");
+
+            products.forEach(product => {
+
+                if (
+                    category === "All" ||
+                    product.dataset.category === category
+                ) {
+                    product.style.display = "block";
+                } else {
+                    product.style.display = "none";
+                }
+
+            });
+
+            if (clickedButton) {
+
+                document.querySelectorAll(".filter")
+                    .forEach(btn => btn.classList.remove("active"));
+
+                clickedButton.classList.add("active");
+
+            }
+
+            document.getElementById("shop")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+        }
+
+
+        /* =========================
+           SEARCH
+        ========================= */
+
+        function focusSearch() {
+
+            const search = prompt(
+                "What furniture are you looking for?"
+            );
+
+            if (!search) return;
+
+            const products =
+                document.querySelectorAll(".product-card");
+
+            products.forEach(product => {
+
+                const text =
+                    product.innerText.toLowerCase();
+
+                product.style.display =
+                    text.includes(search.toLowerCase())
+                        ? "block"
+                        : "none";
+
+            });
+
+            document.getElementById("shop")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+        }
+
+
+        /* =========================
+           CART
+        ========================= */
+
+        function scrollToCart() {
+
+            if (cartCount === 0) {
+
+                alert("Your cart is currently empty.");
+
+            } else {
+
+                alert(
+                    "You have " +
+                    cartCount +
+                    " item(s) in your cart."
+                );
+
+            }
+        }
+
+
+        /* =========================
+           NEWSLETTER
+        ========================= */
+
+        function subscribe() {
+
+            const email =
+                document.getElementById("email").value;
+
+            if (!email || !email.includes("@")) {
+
+                alert("Please enter a valid email address.");
+
+                return;
+            }
+
+            alert(
+                "Thank you. You are now subscribed to Oak & Haven."
+            );
+
+            document.getElementById("email").value = "";
+        }
+
+    </script>
 
 </body>
 </html>
